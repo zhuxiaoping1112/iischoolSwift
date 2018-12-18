@@ -20,6 +20,7 @@
 		CEDB746421C8D9970030786D /* HomeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB746321C8D9970030786D /* HomeDetailController.swift */; };
 		CEDB746621C8D9AE0030786D /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB746521C8D9AE0030786D /* MenuController.swift */; };
 		CEDB746821C8D9BE0030786D /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB746721C8D9BE0030786D /* SettingController.swift */; };
+		CEDB746D21C8EDBF0030786D /* UIView+frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB746C21C8EDBF0030786D /* UIView+frame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		CEDB746321C8D9970030786D /* HomeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailController.swift; sourceTree = "<group>"; };
 		CEDB746521C8D9AE0030786D /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		CEDB746721C8D9BE0030786D /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		CEDB746C21C8EDBF0030786D /* UIView+frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+frame.swift"; sourceTree = "<group>"; };
 		D9C2EAE9C278B837FC4744FA /* Pods-iischoolSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iischoolSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 		CE19B9DD21C3B65000758DE0 /* iischoolSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB746921C8ECC90030786D /* Extension */,
 				CEDB745821C8CF870030786D /* Controlles */,
 				CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */,
 				CE19B9E221C3B65000758DE0 /* Main.storyboard */,
@@ -171,6 +174,14 @@
 				CEDB746721C8D9BE0030786D /* SettingController.swift */,
 			);
 			path = SettingController;
+			sourceTree = "<group>";
+		};
+		CEDB746921C8ECC90030786D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB746C21C8EDBF0030786D /* UIView+frame.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDB746D21C8EDBF0030786D /* UIView+frame.swift in Sources */,
 				CEDB746821C8D9BE0030786D /* SettingController.swift in Sources */,
 				CEDB746621C8D9AE0030786D /* MenuController.swift in Sources */,
 				CEDB745721C8C6820030786D /* UIConstant.swift in Sources */,
