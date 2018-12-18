@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78325D30848D9D71C34FEB1B /* Pods_iischoolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */; };
 		CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */; };
-		CE19B9E121C3B65000758DE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19B9E021C3B65000758DE0 /* ViewController.swift */; };
 		CE19B9E421C3B65000758DE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E221C3B65000758DE0 /* Main.storyboard */; };
 		CE19B9E621C3B65100758DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E521C3B65100758DE0 /* Assets.xcassets */; };
 		CE19B9E921C3B65100758DE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E721C3B65100758DE0 /* LaunchScreen.storyboard */; };
+		CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */; };
+		CEDB745421C8C5410030786D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745321C8C5410030786D /* MainViewController.swift */; };
+		CEDB745721C8C6820030786D /* UIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745621C8C6820030786D /* UIConstant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iischoolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E794BDF160705E8DD1E3129 /* Pods-iischoolSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iischoolSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift.release.xcconfig"; sourceTree = "<group>"; };
 		CE19B9DB21C3B65000758DE0 /* iischoolSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iischoolSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE19B9E021C3B65000758DE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE19B9E321C3B65000758DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE19B9E521C3B65100758DE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE19B9E821C3B65100758DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE19B9EA21C3B65100758DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavController.swift; sourceTree = "<group>"; };
+		CEDB745321C8C5410030786D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CEDB745621C8C6820030786D /* UIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstant.swift; sourceTree = "<group>"; };
+		D9C2EAE9C278B837FC4744FA /* Pods-iischoolSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iischoolSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78325D30848D9D71C34FEB1B /* Pods_iischoolSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8EBA93DBDC3C99F999D2CB14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9C2EAE9C278B837FC4744FA /* Pods-iischoolSwift.debug.xcconfig */,
+				9E794BDF160705E8DD1E3129 /* Pods-iischoolSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		920C4631DDEC79469B86BF11 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE19B9D221C3B65000758DE0 = {
 			isa = PBXGroup;
 			children = (
+				CEDB745521C8C6680030786D /* Constant */,
 				CE19B9DD21C3B65000758DE0 /* iischoolSwift */,
 				CE19B9DC21C3B65000758DE0 /* Products */,
+				8EBA93DBDC3C99F999D2CB14 /* Pods */,
+				920C4631DDEC79469B86BF11 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +83,79 @@
 		CE19B9DD21C3B65000758DE0 /* iischoolSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB745821C8CF870030786D /* Controlles */,
 				CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */,
-				CE19B9E021C3B65000758DE0 /* ViewController.swift */,
 				CE19B9E221C3B65000758DE0 /* Main.storyboard */,
 				CE19B9E521C3B65100758DE0 /* Assets.xcassets */,
 				CE19B9E721C3B65100758DE0 /* LaunchScreen.storyboard */,
 				CE19B9EA21C3B65100758DE0 /* Info.plist */,
+				CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */,
 			);
 			path = iischoolSwift;
+			sourceTree = "<group>";
+		};
+		CEDB745521C8C6680030786D /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB745621C8C6820030786D /* UIConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		CEDB745821C8CF870030786D /* Controlles */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB745E21C8D1510030786D /* SettingController */,
+				CEDB745D21C8D09E0030786D /* MenuController */,
+				CEDB745C21C8D09B0030786D /* HomeDetailController */,
+				CEDB745B21C8D0980030786D /* HomeController */,
+				CEDB745A21C8D0940030786D /* FindAppDetailController */,
+				CEDB745921C8D06B0030786D /* MainViewController */,
+			);
+			path = Controlles;
+			sourceTree = "<group>";
+		};
+		CEDB745921C8D06B0030786D /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB745321C8C5410030786D /* MainViewController.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		CEDB745A21C8D0940030786D /* FindAppDetailController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FindAppDetailController;
+			sourceTree = "<group>";
+		};
+		CEDB745B21C8D0980030786D /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeController;
+			sourceTree = "<group>";
+		};
+		CEDB745C21C8D09B0030786D /* HomeDetailController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeDetailController;
+			sourceTree = "<group>";
+		};
+		CEDB745D21C8D09E0030786D /* MenuController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MenuController;
+			sourceTree = "<group>";
+		};
+		CEDB745E21C8D1510030786D /* SettingController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE19B9ED21C3B65100758DE0 /* Build configuration list for PBXNativeTarget "iischoolSwift" */;
 			buildPhases = (
+				D16687E780583286D6F5E39D /* [CP] Check Pods Manifest.lock */,
 				CE19B9D721C3B65000758DE0 /* Sources */,
 				CE19B9D821C3B65000758DE0 /* Frameworks */,
 				CE19B9D921C3B65000758DE0 /* Resources */,
+				2E0B48C2CA35F2CD5D7E9982 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +226,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E0B48C2CA35F2CD5D7E9982 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MonkeyKing/MonkeyKing.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MonkeyKing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D16687E780583286D6F5E39D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iischoolSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE19B9D721C3B65000758DE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE19B9E121C3B65000758DE0 /* ViewController.swift in Sources */,
+				CEDB745721C8C6820030786D /* UIConstant.swift in Sources */,
 				CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */,
+				CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */,
+				CEDB745421C8C5410030786D /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +443,7 @@
 		};
 		CE19B9EE21C3B65100758DE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9C2EAE9C278B837FC4744FA /* Pods-iischoolSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +462,7 @@
 		};
 		CE19B9EF21C3B65100758DE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E794BDF160705E8DD1E3129 /* Pods-iischoolSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

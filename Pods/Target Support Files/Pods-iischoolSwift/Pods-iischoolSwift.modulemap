@@ -1,0 +1,6 @@
+framework module Pods_iischoolSwift {
+  umbrella header "Pods-iischoolSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
