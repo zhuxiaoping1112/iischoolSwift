@@ -15,6 +15,11 @@
 		CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */; };
 		CEDB745421C8C5410030786D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745321C8C5410030786D /* MainViewController.swift */; };
 		CEDB745721C8C6820030786D /* UIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745621C8C6820030786D /* UIConstant.swift */; };
+		CEDB746021C8D9710030786D /* FindAppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745F21C8D9710030786D /* FindAppDetailController.swift */; };
+		CEDB746221C8D9860030786D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB746121C8D9860030786D /* HomeController.swift */; };
+		CEDB746421C8D9970030786D /* HomeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB746321C8D9970030786D /* HomeDetailController.swift */; };
+		CEDB746621C8D9AE0030786D /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB746521C8D9AE0030786D /* MenuController.swift */; };
+		CEDB746821C8D9BE0030786D /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB746721C8D9BE0030786D /* SettingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavController.swift; sourceTree = "<group>"; };
 		CEDB745321C8C5410030786D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEDB745621C8C6820030786D /* UIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstant.swift; sourceTree = "<group>"; };
+		CEDB745F21C8D9710030786D /* FindAppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAppDetailController.swift; sourceTree = "<group>"; };
+		CEDB746121C8D9860030786D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		CEDB746321C8D9970030786D /* HomeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailController.swift; sourceTree = "<group>"; };
+		CEDB746521C8D9AE0030786D /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		CEDB746721C8D9BE0030786D /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		D9C2EAE9C278B837FC4744FA /* Pods-iischoolSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iischoolSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +136,7 @@
 		CEDB745A21C8D0940030786D /* FindAppDetailController */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB745F21C8D9710030786D /* FindAppDetailController.swift */,
 			);
 			path = FindAppDetailController;
 			sourceTree = "<group>";
@@ -133,6 +144,7 @@
 		CEDB745B21C8D0980030786D /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB746121C8D9860030786D /* HomeController.swift */,
 			);
 			path = HomeController;
 			sourceTree = "<group>";
@@ -140,6 +152,7 @@
 		CEDB745C21C8D09B0030786D /* HomeDetailController */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB746321C8D9970030786D /* HomeDetailController.swift */,
 			);
 			path = HomeDetailController;
 			sourceTree = "<group>";
@@ -147,6 +160,7 @@
 		CEDB745D21C8D09E0030786D /* MenuController */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB746521C8D9AE0030786D /* MenuController.swift */,
 			);
 			path = MenuController;
 			sourceTree = "<group>";
@@ -154,6 +168,7 @@
 		CEDB745E21C8D1510030786D /* SettingController */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB746721C8D9BE0030786D /* SettingController.swift */,
 			);
 			path = SettingController;
 			sourceTree = "<group>";
@@ -296,7 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDB746821C8D9BE0030786D /* SettingController.swift in Sources */,
+				CEDB746621C8D9AE0030786D /* MenuController.swift in Sources */,
 				CEDB745721C8C6820030786D /* UIConstant.swift in Sources */,
+				CEDB746421C8D9970030786D /* HomeDetailController.swift in Sources */,
+				CEDB746021C8D9710030786D /* FindAppDetailController.swift in Sources */,
+				CEDB746221C8D9860030786D /* HomeController.swift in Sources */,
 				CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */,
 				CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */,
 				CEDB745421C8C5410030786D /* MainViewController.swift in Sources */,
