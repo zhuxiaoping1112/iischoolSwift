@@ -36,4 +36,6 @@ struct UIConstant {
     static let MARGIN_10 : CGFloat = 10
     static let MARGIN_15 : CGFloat = 15
     static let MARGIN_20 : CGFloat = 20
+    
+    static let mainStory :UIStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
 }

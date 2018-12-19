@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
         //添加覆盖层
         addCoverView()
         
-        leftMenuShowAnimate()
+//        leftMenuShowAnimate()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -86,7 +86,20 @@ extension MainViewController{
     }
     
     @objc fileprivate func leftMenuShowAnimate(){
-        currentController.traitCollection.containsTraits(in: <#T##UITraitCollection?#>)
+        UIView.animate(withDuration: 0.3) {
+            self.currentController.view.x = self.menuMaxWidth
+            self.menuControlller.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            self.cover.isHidden = false
+        }
+    }
+    
+    @objc fileprivate func leftMenuHiddenAnimate(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.currentController.view.x = 0
+            self.cover.isHidden = true
+        }) { (finish)->Void in
+            self.currentController.view.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        }
     }
     
 }

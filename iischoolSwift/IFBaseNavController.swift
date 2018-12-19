@@ -17,7 +17,7 @@ class IFBaseNavController: UINavigationController {
             interactivePopGestureRecognizer?.delegate = self;
             delegate = self;
         }
-            
+            self.view.backgroundColor = UIColor.white
     }
     
     /*

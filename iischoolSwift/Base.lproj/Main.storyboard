@@ -13,7 +13,7 @@
         <!--Base Nav Controller-->
         <scene sceneID="8ez-nI-b5o">
             <objects>
-                <navigationController id="uht-oJ-PZo" customClass="IFBaseNavController" customModule="iischoolSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="IFBaseNavController" id="uht-oJ-PZo" customClass="IFBaseNavController" customModule="iischoolSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gnh-TY-Vjf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -29,7 +29,7 @@
         <!--Main View Controller-->
         <scene sceneID="0zt-Cg-1vf">
             <objects>
-                <viewController id="r7y-LN-r8u" customClass="MainViewController" customModule="iischoolSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="r7y-LN-r8u" customClass="MainViewController" customModule="iischoolSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HWk-6i-wJf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
