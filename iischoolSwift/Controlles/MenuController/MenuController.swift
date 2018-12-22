@@ -10,11 +10,25 @@ import UIKit
 
 class MenuController: UIViewController {
 
+    
+    fileprivate  var mainTableView : UITableView {
+        let mainTableView :UITableView = UITableView()
+        mainTableView.backgroundColor = UIColor.clear
+        mainTableView.separatorStyle = .none
+        let header = MenuHeaderView(frame: CGRect(x: 0, y: 0, width: UIConstant.SCREEN_WIDTH, height: 120))
+        mainTableView.tableHeaderView = header
+        mainTableView.rowHeight = 50
+        mainTableView.sectionHeaderHeight = 120
+        mainTableView.delegate = self
+        mainTableView.dataSource = self
+        return mainTableView
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.blue
+        view.backgroundColor = UIConstant.COLOR_APPNORMAL
+        view.addSubview(mainTableView)
     }
     
 
@@ -28,4 +42,16 @@ class MenuController: UIViewController {
     }
     */
 
+}
+
+extension MainViewController : UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+    
 }

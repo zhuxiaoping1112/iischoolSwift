@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78325D30848D9D71C34FEB1B /* Pods_iischoolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */; };
+		CE07C0DB21CB3D7400C223B8 /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */; };
 		CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */; };
 		CE19B9E421C3B65000758DE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E221C3B65000758DE0 /* Main.storyboard */; };
 		CE19B9E621C3B65100758DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E521C3B65100758DE0 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iischoolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E794BDF160705E8DD1E3129 /* Pods-iischoolSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iischoolSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift.release.xcconfig"; sourceTree = "<group>"; };
+		CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
 		CE19B9DB21C3B65000758DE0 /* iischoolSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iischoolSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE19B9E321C3B65000758DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE07C0D921CB3CE100C223B8 /* ViewS */ = {
+			isa = PBXGroup;
+			children = (
+				CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */,
+			);
+			path = ViewS;
+			sourceTree = "<group>";
+		};
 		CE19B9D221C3B65000758DE0 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 		CE19B9DD21C3B65000758DE0 /* iischoolSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CE07C0D921CB3CE100C223B8 /* ViewS */,
 				CEDB746921C8ECC90030786D /* Extension */,
 				CEDB745821C8CF870030786D /* Controlles */,
 				CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */,
@@ -331,6 +342,7 @@
 				CEDB746221C8D9860030786D /* HomeController.swift in Sources */,
 				CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */,
 				CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */,
+				CE07C0DB21CB3D7400C223B8 /* MenuHeaderView.swift in Sources */,
 				CEDB745421C8C5410030786D /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
