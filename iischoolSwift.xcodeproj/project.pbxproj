@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		78325D30848D9D71C34FEB1B /* Pods_iischoolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */; };
 		CE07C0DB21CB3D7400C223B8 /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */; };
+		CE0EA50921D7517B00754924 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EA50821D7517B00754924 /* MenuTableViewCell.swift */; };
 		CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */; };
 		CE19B9E421C3B65000758DE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E221C3B65000758DE0 /* Main.storyboard */; };
 		CE19B9E621C3B65100758DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E521C3B65100758DE0 /* Assets.xcassets */; };
 		CE19B9E921C3B65100758DE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E721C3B65100758DE0 /* LaunchScreen.storyboard */; };
+		CE26129921D1C43000A6BF15 /* MenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26129821D1C43000A6BF15 /* MenuFooterView.swift */; };
 		CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */; };
 		CEDB745421C8C5410030786D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745321C8C5410030786D /* MainViewController.swift */; };
 		CEDB745721C8C6820030786D /* UIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745621C8C6820030786D /* UIConstant.swift */; };
@@ -28,12 +30,14 @@
 		88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iischoolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E794BDF160705E8DD1E3129 /* Pods-iischoolSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iischoolSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift.release.xcconfig"; sourceTree = "<group>"; };
 		CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
+		CE0EA50821D7517B00754924 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		CE19B9DB21C3B65000758DE0 /* iischoolSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iischoolSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE19B9E321C3B65000758DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE19B9E521C3B65100758DE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE19B9E821C3B65100758DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE19B9EA21C3B65100758DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE26129821D1C43000A6BF15 /* MenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFooterView.swift; sourceTree = "<group>"; };
 		CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavController.swift; sourceTree = "<group>"; };
 		CEDB745321C8C5410030786D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEDB745621C8C6820030786D /* UIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstant.swift; sourceTree = "<group>"; };
@@ -78,9 +82,19 @@
 		CE07C0D921CB3CE100C223B8 /* ViewS */ = {
 			isa = PBXGroup;
 			children = (
-				CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */,
+				CE0EA50721D7143000754924 /* MenuView */,
 			);
 			path = ViewS;
+			sourceTree = "<group>";
+		};
+		CE0EA50721D7143000754924 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */,
+				CE0EA50821D7517B00754924 /* MenuTableViewCell.swift */,
+				CE26129821D1C43000A6BF15 /* MenuFooterView.swift */,
+			);
+			path = MenuView;
 			sourceTree = "<group>";
 		};
 		CE19B9D221C3B65000758DE0 = {
@@ -339,8 +353,10 @@
 				CEDB745721C8C6820030786D /* UIConstant.swift in Sources */,
 				CEDB746421C8D9970030786D /* HomeDetailController.swift in Sources */,
 				CEDB746021C8D9710030786D /* FindAppDetailController.swift in Sources */,
+				CE26129921D1C43000A6BF15 /* MenuFooterView.swift in Sources */,
 				CEDB746221C8D9860030786D /* HomeController.swift in Sources */,
 				CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */,
+				CE0EA50921D7517B00754924 /* MenuTableViewCell.swift in Sources */,
 				CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */,
 				CE07C0DB21CB3D7400C223B8 /* MenuHeaderView.swift in Sources */,
 				CEDB745421C8C5410030786D /* MainViewController.swift in Sources */,
@@ -492,6 +508,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VRYLEM5EL6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MonkeyKing\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Moya\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Result\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit\"/**",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYCache\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYWebImage\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"${SDK_DIR}/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = iischoolSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,6 +546,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VRYLEM5EL6;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"${SDK_DIR}/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = iischoolSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -9,8 +9,6 @@
 import UIKit
 
 class MenuController: UIViewController {
-
-    
     fileprivate  var mainTableView : UITableView {
         let mainTableView :UITableView = UITableView()
         mainTableView.backgroundColor = UIColor.clear
@@ -19,10 +17,23 @@ class MenuController: UIViewController {
         mainTableView.tableHeaderView = header
         mainTableView.rowHeight = 50
         mainTableView.sectionHeaderHeight = 120
-        mainTableView.delegate = self
-        mainTableView.dataSource = self
+//        mainTableView.delegate = self
+//        mainTableView.dataSource = self
         return mainTableView
     }
+    
+    fileprivate var footerView : MenuFooterView {
+        let footerView = MenuFooterView()
+        footerView.delete(self)
+        return footerView
+    }
+    
+    fileprivate var headerView : MenuHeaderView{
+        let headerView :MenuHeaderView = MenuHeaderView()
+        return headerView
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +42,6 @@ class MenuController: UIViewController {
         view.addSubview(mainTableView)
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -46,11 +56,15 @@ class MenuController: UIViewController {
 
 extension MainViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let MenuTableViewCellIdentifier = "MenuTableViewCellIdentifier"
+        var menuCell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCellIdentifier as String) as! MenuTableViewCell
+        if (menuCell .isEqual(NSNull())) {
+            menuCell = MenuTableViewCell(style)
+        }
     }
     
     

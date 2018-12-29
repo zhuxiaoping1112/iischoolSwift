@@ -1,14 +1,14 @@
 //
-//  MenuHeaderView.swift
+//  MenuFooterView.swift
 //  iischoolSwift
 //
-//  Created by junke on 2018/12/20.
+//  Created by junke on 2018/12/25.
 //  Copyright © 2018 hank. All rights reserved.
 //
 
 import UIKit
 
-class MenuHeaderView: UIView {
+class MenuFooterView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
