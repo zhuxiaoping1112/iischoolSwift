@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import SafariServices
+
+enum MenuItemType{
+    
+}
 
 class MenuController: UIViewController {
     fileprivate  var mainTableView : UITableView {
@@ -60,11 +65,10 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let MenuTableViewCellIdentifier = "MenuTableViewCellIdentifier"
-        var menuCell = tableView.dequeueReusableCell(withIdentifier: MenuTableViewCellIdentifier as String) as! MenuTableViewCell
-        if (menuCell .isEqual(NSNull())) {
-            menuCell = MenuTableViewCell(style)
-        }
+        let menuCell = MenuTableViewCell.cell(withtable)
+
+        
+        return menuCell
     }
     
     

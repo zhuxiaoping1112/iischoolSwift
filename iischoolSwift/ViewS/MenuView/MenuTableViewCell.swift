@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import SnapKit
+import Reusable
 
-class MenuTableViewCell: UITableViewCell {
+class MenuTableViewCell: UITableViewCell, Reusable {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
      super .init(style: style, reuseIdentifier: reuseIdentifier)
@@ -16,13 +18,22 @@ class MenuTableViewCell: UITableViewCell {
         //添加控件
         self.contentView.addSubview(iconView)
         self.contentView.addSubview(titleLable)
-//        self.contentView.addSubview(dotView)
+        self.contentView.addSubview(dotView)
         
-        iconView.snp.makeConstraints{
-            
+        iconView.snp.makeConstraints{make in
+            make.size.equalTo(CGSize(width: 30, height: 30))
+            make.centerY.equalTo(self.contentView.snp.centerY)
+            make.left.equalTo(self.contentView.snp.left).offset(30)
         }
-        titleLable.snp.makeConstraints{
-            
+        titleLable.snp.makeConstraints { make in
+            make.left.equalTo(self.iconView.snp.right).offset(15)
+            make.top.bottom.right.equalTo(self.contentView)
+        }
+        
+        dotView.snp.makeConstraints { make in
+            make.left.equalTo(self.contentView).offset(15)
+            make.centerY.equalTo(self.contentView.snp.centerY)
+            make.size.equalTo(CGSize(width: 5, height: 5))
         }
     }
     
@@ -35,11 +46,6 @@ class MenuTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
     fileprivate var iconView : UIView {
         let iconView : UIView = UIView();
@@ -49,6 +55,13 @@ class MenuTableViewCell: UITableViewCell {
     
     fileprivate var titleLable : UILabel{
         let titleLable : UILabel = UILabel()
-        return titleLable
+        titleLable.text = "基础"
+        return titleLable;
+    }
+    
+    fileprivate var dotView : UIView {
+        let dotView : UIView = UIView()
+        dotView.layer.cornerRadius = 10
+        return dotView
     }
 }

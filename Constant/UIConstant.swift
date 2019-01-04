@@ -8,6 +8,11 @@
 
 import UIKit
 
+@_exported import RxSwift
+@_exported import SnapKit
+@_exported import Moya
+
+
 struct UIConstant {
     //屏幕高度
     static let SCREEN_WIDTH : CGFloat = UIScreen.main.bounds.width;

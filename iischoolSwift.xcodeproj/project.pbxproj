@@ -15,6 +15,8 @@
 		CE19B9E621C3B65100758DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E521C3B65100758DE0 /* Assets.xcassets */; };
 		CE19B9E921C3B65100758DE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E721C3B65100758DE0 /* LaunchScreen.storyboard */; };
 		CE26129921D1C43000A6BF15 /* MenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26129821D1C43000A6BF15 /* MenuFooterView.swift */; };
+		CE44E1E921DDABA100546318 /* MenuTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44E1E821DDABA100546318 /* MenuTabModel.swift */; };
+		CE44E1EF21DDEA6F00546318 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44E1EE21DDEA6F00546318 /* Reusable.swift */; };
 		CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */; };
 		CEDB745421C8C5410030786D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745321C8C5410030786D /* MainViewController.swift */; };
 		CEDB745721C8C6820030786D /* UIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745621C8C6820030786D /* UIConstant.swift */; };
@@ -38,6 +40,9 @@
 		CE19B9E821C3B65100758DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE19B9EA21C3B65100758DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE26129821D1C43000A6BF15 /* MenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFooterView.swift; sourceTree = "<group>"; };
+		CE44E1E821DDABA100546318 /* MenuTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabModel.swift; sourceTree = "<group>"; };
+		CE44E1EA21DDBDA800546318 /* iischoolSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iischoolSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE44E1EE21DDEA6F00546318 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavController.swift; sourceTree = "<group>"; };
 		CEDB745321C8C5410030786D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEDB745621C8C6820030786D /* UIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstant.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		CE19B9D221C3B65000758DE0 = {
 			isa = PBXGroup;
 			children = (
+				CE44E1EA21DDBDA800546318 /* iischoolSwift-Bridging-Header.h */,
 				CEDB745521C8C6680030786D /* Constant */,
 				CE19B9DD21C3B65000758DE0 /* iischoolSwift */,
 				CE19B9DC21C3B65000758DE0 /* Products */,
@@ -119,6 +125,7 @@
 		CE19B9DD21C3B65000758DE0 /* iischoolSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CE44E1E721DDAB6E00546318 /* Models */,
 				CE07C0D921CB3CE100C223B8 /* ViewS */,
 				CEDB746921C8ECC90030786D /* Extension */,
 				CEDB745821C8CF870030786D /* Controlles */,
@@ -130,6 +137,14 @@
 				CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */,
 			);
 			path = iischoolSwift;
+			sourceTree = "<group>";
+		};
+		CE44E1E721DDAB6E00546318 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE44E1E821DDABA100546318 /* MenuTabModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CEDB745521C8C6680030786D /* Constant */ = {
@@ -205,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				CEDB746C21C8EDBF0030786D /* UIView+frame.swift */,
+				CE44E1EE21DDEA6F00546318 /* Reusable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -356,7 +372,9 @@
 				CE26129921D1C43000A6BF15 /* MenuFooterView.swift in Sources */,
 				CEDB746221C8D9860030786D /* HomeController.swift in Sources */,
 				CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */,
+				CE44E1EF21DDEA6F00546318 /* Reusable.swift in Sources */,
 				CE0EA50921D7517B00754924 /* MenuTableViewCell.swift in Sources */,
+				CE44E1E921DDABA100546318 /* MenuTabModel.swift in Sources */,
 				CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */,
 				CE07C0DB21CB3D7400C223B8 /* MenuHeaderView.swift in Sources */,
 				CEDB745421C8C5410030786D /* MainViewController.swift in Sources */,
