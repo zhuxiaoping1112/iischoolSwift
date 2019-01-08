@@ -8,7 +8,6 @@
 
 import UIKit
 import SnapKit
-import Reusable
 
 class MenuTableViewCell: UITableViewCell, Reusable {
     
@@ -47,8 +46,8 @@ class MenuTableViewCell: UITableViewCell, Reusable {
     }
 
 
-    fileprivate var iconView : UIView {
-        let iconView : UIView = UIView();
+    fileprivate var iconView : UIImageView {
+        let iconView : UIImageView = UIImageView();
         iconView.layer.cornerRadius = 50
         return iconView
     }
@@ -59,9 +58,24 @@ class MenuTableViewCell: UITableViewCell, Reusable {
         return titleLable;
     }
     
-    fileprivate var dotView : UIView {
+    var dotView : UIView {
         let dotView : UIView = UIView()
         dotView.layer.cornerRadius = 10
         return dotView
+    }
+    var model : MenuTabModel!{
+        didSet{
+            self.iconView.image = model.image
+            self.titleLable.text = model.title
+        }
+    }
+    
+    class func cell(withTableView tableView:UITableView) -> MenuTableViewCell {
+        var cell = tableView.dequeueReusableCell() as MenuTableViewCell?
+        if cell == nil{
+            cell = MenuTableViewCell(style: .default, reuseIdentifier: self.reuseIdentifier)
+            cell?.selectionStyle = .none
+        }
+        return cell!
     }
 }

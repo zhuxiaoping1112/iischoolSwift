@@ -9,8 +9,39 @@
 import UIKit
 import SafariServices
 
+
 enum MenuItemType{
+    // 每日最美
+    case dayily
+    // 限免推荐
+    case recommend
+    // 发现应用
+    case findApp
+    // 文章专栏
+    case article
+    // 美我一下
+    case appStoreComment
+    // 我的收藏
+    case collect
     
+    func typeTarget() -> APIConstant {
+        switch self {
+        case .dayily:
+            return .daily(1)
+        case .recommend:
+            return .recommend(1)
+        case .findApp:
+            return .popular(1)
+        case .article:
+            return .article
+        default:
+            return .daily(1)
+        }
+    }
+}
+
+protocol MenuControllerDelegate{
+    func menuDidClick(withType: MenuItemType)
 }
 
 class MenuController: UIViewController {
@@ -38,6 +69,10 @@ class MenuController: UIViewController {
         return headerView
     }
     
+    var delegate : MenuControllerDelegate?
+    fileprivate var type: MenuItemType! = .dayily
+    public var lastSelectDotView : UIView!
+    fileprivate var selectIndex : Int! = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,15 +94,18 @@ class MenuController: UIViewController {
 
 }
 
-extension MainViewController : UITableViewDelegate,UITableViewDataSource {
+extension MenuController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return MenuTabItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let menuCell = MenuTableViewCell.cell(withtable)
-
-        
+        let menuCell = MenuTableViewCell.cell(withTableView: tableView)
+        menuCell.model = MenuTabItems[indexPath.row]
+        if indexPath.row == 0 {
+            menuCell.dotView.isHidden = false
+            lastSelectDotView = menuCell.dotView
+        }
         return menuCell
     }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78325D30848D9D71C34FEB1B /* Pods_iischoolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */; };
+		82D709E921DF5CF300632687 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D709E821DF5CF300632687 /* APIConstant.swift */; };
 		CE07C0DB21CB3D7400C223B8 /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */; };
 		CE0EA50921D7517B00754924 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EA50821D7517B00754924 /* MenuTableViewCell.swift */; };
 		CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19B9DE21C3B65000758DE0 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		82D709E821DF5CF300632687 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iischoolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E794BDF160705E8DD1E3129 /* Pods-iischoolSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iischoolSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift.release.xcconfig"; sourceTree = "<group>"; };
 		CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				CEDB745621C8C6820030786D /* UIConstant.swift */,
+				82D709E821DF5CF300632687 /* APIConstant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82D709E921DF5CF300632687 /* APIConstant.swift in Sources */,
 				CEDB746D21C8EDBF0030786D /* UIView+frame.swift in Sources */,
 				CEDB746821C8D9BE0030786D /* SettingController.swift in Sources */,
 				CEDB746621C8D9AE0030786D /* MenuController.swift in Sources */,
