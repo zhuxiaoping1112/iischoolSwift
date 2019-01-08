@@ -17,7 +17,6 @@ class MainViewController: UIViewController {
         intRootViewController()
         //添加覆盖层
         addCoverView()
-        
         leftMenuShowAnimate()
     }
     

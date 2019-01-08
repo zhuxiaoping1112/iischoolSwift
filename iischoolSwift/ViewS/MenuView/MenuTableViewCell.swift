@@ -19,17 +19,18 @@ class MenuTableViewCell: UITableViewCell, Reusable {
         self.contentView.addSubview(titleLable)
         self.contentView.addSubview(dotView)
         
-        iconView.snp.makeConstraints{make in
+        iconView.snp.makeConstraints{ (make) in
             make.size.equalTo(CGSize(width: 30, height: 30))
             make.centerY.equalTo(self.contentView.snp.centerY)
             make.left.equalTo(self.contentView.snp.left).offset(30)
         }
-        titleLable.snp.makeConstraints { make in
+        
+        titleLable.snp.makeConstraints { (make) in
             make.left.equalTo(self.iconView.snp.right).offset(15)
             make.top.bottom.right.equalTo(self.contentView)
         }
         
-        dotView.snp.makeConstraints { make in
+        dotView.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView).offset(15)
             make.centerY.equalTo(self.contentView.snp.centerY)
             make.size.equalTo(CGSize(width: 5, height: 5))
@@ -45,24 +46,24 @@ class MenuTableViewCell: UITableViewCell, Reusable {
         // Initialization code
     }
 
-
-    fileprivate var iconView : UIImageView {
+    fileprivate lazy var iconView : UIImageView  = {
         let iconView : UIImageView = UIImageView();
         iconView.layer.cornerRadius = 50
         return iconView
-    }
+    }()
     
-    fileprivate var titleLable : UILabel{
+    fileprivate lazy var titleLable : UILabel = {
         let titleLable : UILabel = UILabel()
         titleLable.text = "基础"
         return titleLable;
-    }
+    }()
     
-    var dotView : UIView {
+    lazy var dotView : UIView = {
         let dotView : UIView = UIView()
         dotView.layer.cornerRadius = 10
         return dotView
-    }
+    }()
+    
     var model : MenuTabModel!{
         didSet{
             self.iconView.image = model.image

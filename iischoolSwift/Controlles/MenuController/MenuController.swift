@@ -45,7 +45,7 @@ protocol MenuControllerDelegate{
 }
 
 class MenuController: UIViewController {
-    fileprivate  var mainTableView : UITableView {
+    fileprivate lazy var mainTableView : UITableView = {
         let mainTableView :UITableView = UITableView()
         mainTableView.backgroundColor = UIColor.clear
         mainTableView.separatorStyle = .none
@@ -53,21 +53,17 @@ class MenuController: UIViewController {
         mainTableView.tableHeaderView = header
         mainTableView.rowHeight = 50
         mainTableView.sectionHeaderHeight = 120
-//        mainTableView.delegate = self
-//        mainTableView.dataSource = self
+        mainTableView.delegate = self
+        mainTableView.dataSource = self
         return mainTableView
-    }
+    }()
     
-    fileprivate var footerView : MenuFooterView {
+    fileprivate lazy var footerView : MenuFooterView = {
         let footerView = MenuFooterView()
-        footerView.delete(self)
+//        footerView.delete(self)
         return footerView
-    }
-    
-    fileprivate var headerView : MenuHeaderView{
-        let headerView :MenuHeaderView = MenuHeaderView()
-        return headerView
-    }
+    }()
+
     
     var delegate : MenuControllerDelegate?
     fileprivate var type: MenuItemType! = .dayily
@@ -80,21 +76,31 @@ class MenuController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIConstant.COLOR_APPNORMAL
         view.addSubview(mainTableView)
+        view.addSubview(footerView)
+        setupLayout()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
-    */
-
+    
+    func setupLayout() -> Void {
+        mainTableView.snp.makeConstraints{(make) in
+            make.left.right.top.equalTo(self.view)
+            make.height.equalTo(UIConstant.SCREEN_HEIGH - 40 - UIConstant.Height_TabBar)
+        }
+        footerView.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalTo(self.view)
+            make.height.equalTo(40)
+        }
+    }
 }
 
 extension MenuController : UITableViewDelegate,UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MenuTabItems.count
     }
@@ -108,6 +114,5 @@ extension MenuController : UITableViewDelegate,UITableViewDataSource {
         }
         return menuCell
     }
-    
-    
+
 }
