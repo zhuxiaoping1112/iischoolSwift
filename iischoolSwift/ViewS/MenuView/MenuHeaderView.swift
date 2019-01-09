@@ -36,7 +36,7 @@ class MenuHeaderView: UIView {
     //MARK: ------------------Getter and Setter-----------------
     fileprivate  lazy var loginImageView : UIImageView = {
         let loginImageView :UIImageView = UIImageView(image: UIImage(named: "detail_portrait_default"))
-        loginImageView.layer.cornerRadius = 50
+        loginImageView.layer.cornerRadius = 25
         loginImageView.clipsToBounds = true
         loginImageView.contentMode = .scaleAspectFit
         return loginImageView

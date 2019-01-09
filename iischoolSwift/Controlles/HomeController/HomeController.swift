@@ -15,10 +15,13 @@ class HomeController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.red
         
-        
     }
     
-
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    fileprivate var apiTarget :MenuItemType
+    
     /*
     // MARK: - Navigation
 

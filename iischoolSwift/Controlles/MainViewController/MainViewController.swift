@@ -31,16 +31,6 @@ class MainViewController: UIViewController {
     fileprivate var currentController: UIViewController!
     fileprivate let menuMaxWidth: CGFloat = 0.8*UIConstant.SCREEN_WIDTH
     fileprivate weak var cover: UIWindow!
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
@@ -101,4 +91,20 @@ extension MainViewController{
         }
     }
     
+}
+
+//MARK: ------------------Getter and Setter-----------------
+extension MainViewController :MenuControllerDelegate{
+    func menuDidClick(withType : MenuItemType) {
+        switch withType {
+        case .dayily,.recommend,.article:
+            guard currentController != homeController else{
+                leftMenuHiddenAnimate()
+                homeController?.apiTarget = withType
+                return
+            }
+        default:
+         break
+        }
+    }
 }

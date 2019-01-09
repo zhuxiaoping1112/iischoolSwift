@@ -68,11 +68,10 @@ class MenuController: UIViewController {
     var delegate : MenuControllerDelegate?
     fileprivate var type: MenuItemType! = .dayily
     public var lastSelectDotView : UIView!
-    fileprivate var selectIndex : Int! = 0
+    fileprivate var selectIndex : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         view.backgroundColor = UIConstant.COLOR_APPNORMAL
         view.addSubview(mainTableView)
@@ -113,6 +112,48 @@ extension MenuController : UITableViewDelegate,UITableViewDataSource {
             lastSelectDotView = menuCell.dotView
         }
         return menuCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard selectIndex != indexPath.row else {
+            return
+        }
+        switch indexPath.row {
+        case 0:
+            //每日最美
+            type = MenuItemType.dayily
+        case 1:
+            // 限免推荐
+            type = MenuItemType.recommend
+        case 2:
+            // 发现应用
+            type = MenuItemType.findApp
+        case 3:
+            //文章专栏
+            type = MenuItemType.article
+        case 4:
+            // 美我一下
+            type = MenuItemType.appStoreComment
+            if #available(iOS 10.0, *){
+                UIApplication.shared.open(APIConstant.appStoreComment.baseURL, options: [:], completionHandler: nil)
+            }else{
+                UIApplication.shared.openURL(APIConstant.appStoreComment.baseURL)
+            }
+        case 5:
+            // 我的收藏
+            type = MenuItemType.collect
+        default:
+            break
+        }
+        if type == MenuItemType.appStoreComment || type == MenuItemType.collect {
+            return
+        }
+        delegate?.menuDidClick(withType: type)
+        selectIndex = indexPath.row
+        lastSelectDotView.isHidden = true
+        let cell = tableView.cellForRow(at: indexPath) as! MenuTableViewCell
+        lastSelectDotView = cell.dotView
+        cell.dotView.isHidden = false
     }
 
 }
