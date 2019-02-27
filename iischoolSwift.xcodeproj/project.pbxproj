@@ -16,6 +16,13 @@
 		CE19B9E621C3B65100758DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E521C3B65100758DE0 /* Assets.xcassets */; };
 		CE19B9E921C3B65100758DE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE19B9E721C3B65100758DE0 /* LaunchScreen.storyboard */; };
 		CE26129921D1C43000A6BF15 /* MenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26129821D1C43000A6BF15 /* MenuFooterView.swift */; };
+		CE32C41D22262B79004D13B8 /* ControllerReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C41C22262B79004D13B8 /* ControllerReusable.swift */; };
+		CE32C420222630D4004D13B8 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C41F222630D4004D13B8 /* HomeHeaderView.swift */; };
+		CE32C422222635D1004D13B8 /* NSDate+Nice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C421222635D1004D13B8 /* NSDate+Nice.swift */; };
+		CE32C42422263680004D13B8 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C42322263680004D13B8 /* HomeModel.swift */; };
+		CE32C42622264006004D13B8 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C42522264006004D13B8 /* BaseModel.swift */; };
+		CE32C42822265573004D13B8 /* UIColor+Nice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C42722265573004D13B8 /* UIColor+Nice.swift */; };
+		CE32C42A2226763D004D13B8 /* HomeCenterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C4292226763D004D13B8 /* HomeCenterItemCell.swift */; };
 		CE44E1E921DDABA100546318 /* MenuTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44E1E821DDABA100546318 /* MenuTabModel.swift */; };
 		CE44E1EF21DDEA6F00546318 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44E1EE21DDEA6F00546318 /* Reusable.swift */; };
 		CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */; };
@@ -42,6 +49,13 @@
 		CE19B9E821C3B65100758DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE19B9EA21C3B65100758DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE26129821D1C43000A6BF15 /* MenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFooterView.swift; sourceTree = "<group>"; };
+		CE32C41C22262B79004D13B8 /* ControllerReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerReusable.swift; sourceTree = "<group>"; };
+		CE32C41F222630D4004D13B8 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		CE32C421222635D1004D13B8 /* NSDate+Nice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Nice.swift"; sourceTree = "<group>"; };
+		CE32C42322263680004D13B8 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		CE32C42522264006004D13B8 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		CE32C42722265573004D13B8 /* UIColor+Nice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Nice.swift"; sourceTree = "<group>"; };
+		CE32C4292226763D004D13B8 /* HomeCenterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCenterItemCell.swift; sourceTree = "<group>"; };
 		CE44E1E821DDABA100546318 /* MenuTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabModel.swift; sourceTree = "<group>"; };
 		CE44E1EA21DDBDA800546318 /* iischoolSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iischoolSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE44E1EE21DDEA6F00546318 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -89,6 +103,7 @@
 		CE07C0D921CB3CE100C223B8 /* ViewS */ = {
 			isa = PBXGroup;
 			children = (
+				CE32C41E222630B2004D13B8 /* HomeView */,
 				CE0EA50721D7143000754924 /* MenuView */,
 			);
 			path = ViewS;
@@ -141,10 +156,21 @@
 			path = iischoolSwift;
 			sourceTree = "<group>";
 		};
+		CE32C41E222630B2004D13B8 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				CE32C41F222630D4004D13B8 /* HomeHeaderView.swift */,
+				CE32C4292226763D004D13B8 /* HomeCenterItemCell.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		CE44E1E721DDAB6E00546318 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				CE44E1E821DDABA100546318 /* MenuTabModel.swift */,
+				CE32C42322263680004D13B8 /* HomeModel.swift */,
+				CE32C42522264006004D13B8 /* BaseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,7 +249,10 @@
 			isa = PBXGroup;
 			children = (
 				CEDB746C21C8EDBF0030786D /* UIView+frame.swift */,
+				CE32C42722265573004D13B8 /* UIColor+Nice.swift */,
+				CE32C421222635D1004D13B8 /* NSDate+Nice.swift */,
 				CE44E1EE21DDEA6F00546318 /* Reusable.swift */,
+				CE32C41C22262B79004D13B8 /* ControllerReusable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -368,15 +397,22 @@
 			files = (
 				82D709E921DF5CF300632687 /* APIConstant.swift in Sources */,
 				CEDB746D21C8EDBF0030786D /* UIView+frame.swift in Sources */,
+				CE32C42A2226763D004D13B8 /* HomeCenterItemCell.swift in Sources */,
 				CEDB746821C8D9BE0030786D /* SettingController.swift in Sources */,
 				CEDB746621C8D9AE0030786D /* MenuController.swift in Sources */,
+				CE32C42822265573004D13B8 /* UIColor+Nice.swift in Sources */,
 				CEDB745721C8C6820030786D /* UIConstant.swift in Sources */,
 				CEDB746421C8D9970030786D /* HomeDetailController.swift in Sources */,
 				CEDB746021C8D9710030786D /* FindAppDetailController.swift in Sources */,
+				CE32C422222635D1004D13B8 /* NSDate+Nice.swift in Sources */,
+				CE32C42422263680004D13B8 /* HomeModel.swift in Sources */,
+				CE32C42622264006004D13B8 /* BaseModel.swift in Sources */,
 				CE26129921D1C43000A6BF15 /* MenuFooterView.swift in Sources */,
 				CEDB746221C8D9860030786D /* HomeController.swift in Sources */,
 				CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */,
 				CE44E1EF21DDEA6F00546318 /* Reusable.swift in Sources */,
+				CE32C41D22262B79004D13B8 /* ControllerReusable.swift in Sources */,
+				CE32C420222630D4004D13B8 /* HomeHeaderView.swift in Sources */,
 				CE0EA50921D7517B00754924 /* MenuTableViewCell.swift in Sources */,
 				CE44E1E921DDABA100546318 /* MenuTabModel.swift in Sources */,
 				CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */,

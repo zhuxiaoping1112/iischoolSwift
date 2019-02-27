@@ -16,6 +16,7 @@ struct UIConstant {
     //屏幕高度
     static let SCREEN_WIDTH : CGFloat = UIScreen.main.bounds.width
     static let SCREEN_HEIGH : CGFloat = UIScreen.main.bounds.height
+    static let SCREEN_HEIGHT : CGFloat = UIScreen.main.bounds.height
     static let IPHONE6_WIDTH : CGFloat = 375
     static let IPHONE6_HEIGHT : CGFloat = 667
     static let IPHONE5_WIDTH : CGFloat = 320

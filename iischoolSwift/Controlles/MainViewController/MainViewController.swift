@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIConstant.COLOR_APPNORMAL
@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
 extension MainViewController{
     fileprivate func intRootViewController (){
         menuControlller = MenuController()
-        menuControlller.view.frame = CGRect(x: 0, y: 0, width: menuMaxWidth, height: UIConstant.SCREEN_HEIGH)
+        menuControlller.view.frame = CGRect(x: 0, y: 0, width: menuMaxWidth, height: UIConstant.SCREEN_HEIGHT)
         homeController = HomeController()
         currentController = homeController
         currentController?.view.frame = self.view.bounds
@@ -93,16 +93,37 @@ extension MainViewController{
     
 }
 
+extension MainViewController : HomeControllerDelegate{
+    func menuBtnDidClick() {
+        leftMenuShowAnimate()
+    }
+    
+    func indexDidChange(withBackgroundColor: String) {
+        view.backgroundColor = UIColor.hexString(hexString: withBackgroundColor)
+        self.menuControlller.view.backgroundColor = UIColor.hexString(hexString: withBackgroundColor)
+    }
+}
+
 //MARK: ------------------Getter and Setter-----------------
 extension MainViewController :MenuControllerDelegate{
     func menuDidClick(withType : MenuItemType) {
         switch withType {
         case .dayily,.recommend,.article:
-            guard currentController != homeController else{
+                guard currentController != homeController else{
                 leftMenuHiddenAnimate()
-                homeController?.apiTarget = withType
+                homeController?.apiTarget = withType.typeTarget()
                 return
             }
+            currentController.view.removeFromSuperview()
+            currentController.removeFromParent()
+            currentController = nil
+            
+                if homeController == nil{
+                    homeController = HomeController()
+                    homeController?.delegate = self
+            }
+            
+            
         default:
          break
         }

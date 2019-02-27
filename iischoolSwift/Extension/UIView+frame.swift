@@ -48,7 +48,7 @@ extension UIView{
             self.frame = frame
         }
     }
-    public var heigth :CGFloat{
+    public var height :CGFloat{
         get{
             return self.frame.size.height
         }

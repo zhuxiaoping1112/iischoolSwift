@@ -86,7 +86,7 @@ class MenuController: UIViewController {
     func setupLayout() -> Void {
         mainTableView.snp.makeConstraints{(make) in
             make.left.right.top.equalTo(self.view)
-            make.height.equalTo(UIConstant.SCREEN_HEIGH - 40 - UIConstant.Height_TabBar)
+            make.height.equalTo(UIConstant.SCREEN_HEIGHT - 40 - UIConstant.Height_TabBar)
         }
         footerView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalTo(self.view)
