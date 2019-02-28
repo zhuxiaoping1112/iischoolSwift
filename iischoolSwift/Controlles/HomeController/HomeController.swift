@@ -28,8 +28,7 @@ class HomeController: UIViewController,ControllerReusable {
         self.view.backgroundColor = UIConstant.COLOR_APPNORMAL
         view.addSubview(headerView)
         view.addSubview(collectionView)
-    //MARK: ------------------待完成-----------------
-//        view.addSubview(bottomCollectionView)
+        view.addSubview(bottomCollectionView)
         
     }
     var progressView: UIImageView!
@@ -84,29 +83,27 @@ class HomeController: UIViewController,ControllerReusable {
         return collectionView
     }()
     
-    
+    //底部音炫
+    fileprivate lazy var bottomCollectionView : HomeBottomCollectionView = {
+        var bottomCollectionView = HomeBottomCollectionView(frame: CGRect(x: 0, y: UIConstant.SCREEN_HEIGHT-60, width: UIConstant.SCREEN_WIDTH, height: 60), collectionViewLayout: HomeBottomFlowLayout())
+        bottomCollectionView.delegate = self
+        bottomCollectionView.dataSource = self
+        return bottomCollectionView
+    }()
     
     
     var apiTarget : APIConstant! = .daily(1){
         didSet{
             self.page = 1
-          
+            self.collectionView.isHidden = true
+            self.bottomCollectionView.isHidden = true
+            self.showProgress()
+            getData(target: apiTarget)
         }
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 //MARK: ------------------HeaderViewDelegate-----------------
 extension HomeController :HeaderViewDelegate{
@@ -117,6 +114,60 @@ extension HomeController :HeaderViewDelegate{
     func headerViewMenuBtnDidClick() {
         
     }
+}
+
+//MARK: ------------------bottomCollectionViewDelegate-----------------
+extension HomeController :UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.homeModelArray.count
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let model = homeModelArray[indexPath.row]
+        if collectionView.tag == 100 {
+            let cell = cell as! HomeCenterItemCell
+            cell.model = model
+        } else {
+            let cell = cell as! HomeBottomItemCell
+            cell.iconUrl = model.icon_image
+        }
+    }
     
-    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView.tag == 100 {
+            let cell = collectionView.dequeueReusableCell(indexPath: indexPath) as HomeCenterItemCell
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(indexPath: indexPath) as HomeBottomItemCell
+            cell.y = 50
+            return cell
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //        // 获取cell中的图片 和 rect 用于做转场动画
+        //        let cell = collectionView.cellForItem(at: indexPath) as! HomeCenterItemCell
+        //        self.curImgView = cell.coverImageView
+        //        // 计算collection点击的item在屏幕中的位置
+        //        let rectInCollectionView = (collectionView.layoutAttributesForItem(at: indexPath)?.frame)!
+        //        let rectInSuperView = collectionView.convert(rectInCollectionView, to: collectionView.superview)
+        //        self.rectInView = CGRect(x: rectInSuperView.origin.x+cell.coverImageView.x, y: rectInSuperView.origin.y+cell.coverImageView.y, width: rectInSuperView.width, height: cell.coverImageView.height)
+        // 获取模型
+        let model = homeModelArray[indexPath.row]
+//        let detailController = HomeDetailController(model: model)
+        let detailController = HomeDetailController()
+        self.navigationController?.pushViewController(detailController, animated: true)
+    }
+}
+
+//MARK: --------------------------- Private Methods --------------------------
+
+extension HomeController {
+   fileprivate func getData(target: APIConstant) {
+        NiceServices.shareInstance.getHomeData(target: target ,{
+        [unowned self](modelArray) in
+            switch  target{
+                
+            }
+        })
+    }
 }

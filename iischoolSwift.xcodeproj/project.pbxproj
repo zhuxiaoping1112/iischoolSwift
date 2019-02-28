@@ -23,6 +23,11 @@
 		CE32C42622264006004D13B8 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C42522264006004D13B8 /* BaseModel.swift */; };
 		CE32C42822265573004D13B8 /* UIColor+Nice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C42722265573004D13B8 /* UIColor+Nice.swift */; };
 		CE32C42A2226763D004D13B8 /* HomeCenterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32C4292226763D004D13B8 /* HomeCenterItemCell.swift */; };
+		CE3F9BB82227727900C31E0C /* HomeBottomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F9BB72227727900C31E0C /* HomeBottomCollectionView.swift */; };
+		CE3F9BC12227BC4E00C31E0C /* HomeBottomItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F9BC02227BC4E00C31E0C /* HomeBottomItemCell.swift */; };
+		CE3F9BC32227C7FC00C31E0C /* UIImageView+Nice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F9BC22227C7FC00C31E0C /* UIImageView+Nice.swift */; };
+		CE3F9BC52227D15A00C31E0C /* UIImage+Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F9BC42227D15A00C31E0C /* UIImage+Corner.swift */; };
+		CE3F9BC82227DF4200C31E0C /* NiceServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F9BC72227DF4200C31E0C /* NiceServices.swift */; };
 		CE44E1E921DDABA100546318 /* MenuTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44E1E821DDABA100546318 /* MenuTabModel.swift */; };
 		CE44E1EF21DDEA6F00546318 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44E1EE21DDEA6F00546318 /* Reusable.swift */; };
 		CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */; };
@@ -56,6 +61,11 @@
 		CE32C42522264006004D13B8 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		CE32C42722265573004D13B8 /* UIColor+Nice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Nice.swift"; sourceTree = "<group>"; };
 		CE32C4292226763D004D13B8 /* HomeCenterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCenterItemCell.swift; sourceTree = "<group>"; };
+		CE3F9BB72227727900C31E0C /* HomeBottomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomCollectionView.swift; sourceTree = "<group>"; };
+		CE3F9BC02227BC4E00C31E0C /* HomeBottomItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomItemCell.swift; sourceTree = "<group>"; };
+		CE3F9BC22227C7FC00C31E0C /* UIImageView+Nice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Nice.swift"; sourceTree = "<group>"; };
+		CE3F9BC42227D15A00C31E0C /* UIImage+Corner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Corner.swift"; sourceTree = "<group>"; };
+		CE3F9BC72227DF4200C31E0C /* NiceServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceServices.swift; sourceTree = "<group>"; };
 		CE44E1E821DDABA100546318 /* MenuTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabModel.swift; sourceTree = "<group>"; };
 		CE44E1EA21DDBDA800546318 /* iischoolSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iischoolSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE44E1EE21DDEA6F00546318 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -142,6 +152,7 @@
 		CE19B9DD21C3B65000758DE0 /* iischoolSwift */ = {
 			isa = PBXGroup;
 			children = (
+				CE3F9BC62227DEDB00C31E0C /* NiceServices */,
 				CE44E1E721DDAB6E00546318 /* Models */,
 				CE07C0D921CB3CE100C223B8 /* ViewS */,
 				CEDB746921C8ECC90030786D /* Extension */,
@@ -161,8 +172,18 @@
 			children = (
 				CE32C41F222630D4004D13B8 /* HomeHeaderView.swift */,
 				CE32C4292226763D004D13B8 /* HomeCenterItemCell.swift */,
+				CE3F9BB72227727900C31E0C /* HomeBottomCollectionView.swift */,
+				CE3F9BC02227BC4E00C31E0C /* HomeBottomItemCell.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		CE3F9BC62227DEDB00C31E0C /* NiceServices */ = {
+			isa = PBXGroup;
+			children = (
+				CE3F9BC72227DF4200C31E0C /* NiceServices.swift */,
+			);
+			path = NiceServices;
 			sourceTree = "<group>";
 		};
 		CE44E1E721DDAB6E00546318 /* Models */ = {
@@ -250,9 +271,11 @@
 			children = (
 				CEDB746C21C8EDBF0030786D /* UIView+frame.swift */,
 				CE32C42722265573004D13B8 /* UIColor+Nice.swift */,
+				CE3F9BC22227C7FC00C31E0C /* UIImageView+Nice.swift */,
 				CE32C421222635D1004D13B8 /* NSDate+Nice.swift */,
 				CE44E1EE21DDEA6F00546318 /* Reusable.swift */,
 				CE32C41C22262B79004D13B8 /* ControllerReusable.swift */,
+				CE3F9BC42227D15A00C31E0C /* UIImage+Corner.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -399,7 +422,9 @@
 				CEDB746D21C8EDBF0030786D /* UIView+frame.swift in Sources */,
 				CE32C42A2226763D004D13B8 /* HomeCenterItemCell.swift in Sources */,
 				CEDB746821C8D9BE0030786D /* SettingController.swift in Sources */,
+				CE3F9BC82227DF4200C31E0C /* NiceServices.swift in Sources */,
 				CEDB746621C8D9AE0030786D /* MenuController.swift in Sources */,
+				CE3F9BC32227C7FC00C31E0C /* UIImageView+Nice.swift in Sources */,
 				CE32C42822265573004D13B8 /* UIColor+Nice.swift in Sources */,
 				CEDB745721C8C6820030786D /* UIConstant.swift in Sources */,
 				CEDB746421C8D9970030786D /* HomeDetailController.swift in Sources */,
@@ -411,13 +436,16 @@
 				CEDB746221C8D9860030786D /* HomeController.swift in Sources */,
 				CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */,
 				CE44E1EF21DDEA6F00546318 /* Reusable.swift in Sources */,
+				CE3F9BC52227D15A00C31E0C /* UIImage+Corner.swift in Sources */,
 				CE32C41D22262B79004D13B8 /* ControllerReusable.swift in Sources */,
 				CE32C420222630D4004D13B8 /* HomeHeaderView.swift in Sources */,
 				CE0EA50921D7517B00754924 /* MenuTableViewCell.swift in Sources */,
 				CE44E1E921DDABA100546318 /* MenuTabModel.swift in Sources */,
 				CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */,
 				CE07C0DB21CB3D7400C223B8 /* MenuHeaderView.swift in Sources */,
+				CE3F9BB82227727900C31E0C /* HomeBottomCollectionView.swift in Sources */,
 				CEDB745421C8C5410030786D /* MainViewController.swift in Sources */,
+				CE3F9BC12227BC4E00C31E0C /* HomeBottomItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
