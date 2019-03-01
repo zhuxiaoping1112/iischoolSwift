@@ -26,11 +26,21 @@ class HomeController: UIViewController,ControllerReusable {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIConstant.COLOR_APPNORMAL
-        view.addSubview(headerView)
-        view.addSubview(collectionView)
-        view.addSubview(bottomCollectionView)
+        view.addSubview(self.headerView)
+        view.addSubview(self.collectionView)
+        view.addSubview(self.bottomCollectionView)
         
+        getData(target: self.apiTarget)
+        
+        headerView.snp.makeConstraints { (make) in
+            make.left.right.equalTo(self.view)
+            make.top.equalTo(self.view).offset(UIConstant.MARGIN_20)
+            make.height.equalTo(UIConstant.SCREEN_HEIGHT*50/UIConstant.IPHONE5_HEIGHT)
+        }
     }
+    
+
+    
     var progressView: UIImageView!
     /// 代理
     var delegate: HomeControllerDelegate?
@@ -74,8 +84,8 @@ class HomeController: UIViewController,ControllerReusable {
             layout.sectionInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 5)
         
         var collectionView = UICollectionView.init(frame: CGRect(x: 0, y: UIConstant.MARGIN_20+UIConstant.SCREEN_HEIGHT*50/UIConstant.IPHONE5_HEIGHT, width: UIConstant.SCREEN_WIDTH, height: UIConstant.SCREEN_HEIGHT*420/UIConstant.IPHONE5_HEIGHT), collectionViewLayout: layout)
-        collectionView.delegate = (self as! UICollectionViewDelegate)
-        collectionView.dataSource = (self as! UICollectionViewDataSource)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
         collectionView.isPagingEnabled = true
         collectionView.registerClass(HomeCenterItemCell.self)
@@ -85,7 +95,7 @@ class HomeController: UIViewController,ControllerReusable {
     
     //底部音炫
     fileprivate lazy var bottomCollectionView : HomeBottomCollectionView = {
-        var bottomCollectionView = HomeBottomCollectionView(frame: CGRect(x: 0, y: UIConstant.SCREEN_HEIGHT-60, width: UIConstant.SCREEN_WIDTH, height: 60), collectionViewLayout: HomeBottomFlowLayout())
+        var bottomCollectionView = HomeBottomCollectionView(frame: CGRect(x: 0, y: UIConstant.SCREEN_HEIGHT-60-UIConstant.SafeAreaBottomHeight, width: UIConstant.SCREEN_WIDTH, height: 60), collectionViewLayout: HomeBottomFlowLayout())
         bottomCollectionView.delegate = self
         bottomCollectionView.dataSource = self
         return bottomCollectionView
@@ -108,11 +118,11 @@ class HomeController: UIViewController,ControllerReusable {
 //MARK: ------------------HeaderViewDelegate-----------------
 extension HomeController :HeaderViewDelegate{
     func headerViewMoveToFirstBtnDidClick() {
-        
+        self.collectionView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     func headerViewMenuBtnDidClick() {
-        
+        self.delegate?.menuBtnDidClick()
     }
 }
 
@@ -163,11 +173,38 @@ extension HomeController :UICollectionViewDelegate,UICollectionViewDataSource{
 
 extension HomeController {
    fileprivate func getData(target: APIConstant) {
-        NiceServices.shareInstance.getHomeData(target: target ,{
+    NiceServices.shareInstance.getHomeData(target: target) {
         [unowned self](modelArray) in
-            switch  target{
+            switch target{
+            case.article:
+//                self.collectionView.setHeaderHidden(hidden: true)
                 
+                break
+            default:
+                break
             }
-        })
+        if self.page == 1{
+            self.homeModelArray.removeAll()
+            self.hiddenProgress()
+        }
+        for mode in modelArray{
+            self.homeModelArray.append(mode)
+        }
+        self.collectionView.reloadData()
+        self.bottomCollectionView.reloadData()
+        if self.page == 1{
+            self.lastIndex = nil
+            self.collectionView.isHidden = false
+            self.bottomCollectionView.isHidden = false
+            self.collectionView.setContentOffset(CGPoint.zero, animated: false)
+            self.bottomCollectionView.setContentOffset(CGPoint.zero, animated: false)
+            self.currentIndex = IndexPath(row: 0, section: 0)
+//            self.bottomCollectionView(inde)
+        }else{
+            self.currentIndex = IndexPath(row: self.homeModelArray.count - 10, section: 0)
+            
+        }
+    
+        }
     }
 }

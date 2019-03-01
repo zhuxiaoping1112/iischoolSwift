@@ -21,8 +21,6 @@ struct UIConstant {
     static let IPHONE5_WIDTH : CGFloat = 320
     static let IPHONE5_HEIGHT : CGFloat = 568
     
-    
-    
     // 字体
     static let FONT_10 : UIFont = UIFont.systemFont(ofSize: 10)
     static let FONT_11 : UIFont = UIFont.systemFont(ofSize: 11)
@@ -68,4 +66,6 @@ struct UIConstant {
     static let Height_StatusBar : CGFloat = ((IS_IPHONE_X == true || IS_IPHONE_Xr == true || IS_IPHONE_Xs == true || IS_IPHONE_Xs_Max == true) ? 44.0 : 20.0)
     static let Height_NavBar : CGFloat = ((IS_IPHONE_X == true || IS_IPHONE_Xr == true || IS_IPHONE_Xs == true || IS_IPHONE_Xs_Max == true) ? 88.0 : 64.0)
     static let Height_TabBar : CGFloat = ((IS_IPHONE_X == true || IS_IPHONE_Xr == true || IS_IPHONE_Xs == true || IS_IPHONE_Xs_Max == true) ? 83.0 : 49.0)
+    static let SafeAreaBottomHeight : CGFloat = ((IS_IPHONE_X == true || IS_IPHONE_Xr == true || IS_IPHONE_Xs == true || IS_IPHONE_Xs_Max == true) ? 34.0 : 0)
+    
 }

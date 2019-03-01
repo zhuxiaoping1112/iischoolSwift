@@ -31,6 +31,7 @@
 		CE44E1E921DDABA100546318 /* MenuTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44E1E821DDABA100546318 /* MenuTabModel.swift */; };
 		CE44E1EF21DDEA6F00546318 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44E1EE21DDEA6F00546318 /* Reusable.swift */; };
 		CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */; };
+		CEB38AC422291FF700D06B34 /* HomeDetailCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB38AC322291FF700D06B34 /* HomeDetailCenterView.swift */; };
 		CEDB745421C8C5410030786D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745321C8C5410030786D /* MainViewController.swift */; };
 		CEDB745721C8C6820030786D /* UIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745621C8C6820030786D /* UIConstant.swift */; };
 		CEDB746021C8D9710030786D /* FindAppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB745F21C8D9710030786D /* FindAppDetailController.swift */; };
@@ -70,6 +71,7 @@
 		CE44E1EA21DDBDA800546318 /* iischoolSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iischoolSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE44E1EE21DDEA6F00546318 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		CE46BD7D21C4C65400C933DE /* IFBaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavController.swift; sourceTree = "<group>"; };
+		CEB38AC322291FF700D06B34 /* HomeDetailCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailCenterView.swift; sourceTree = "<group>"; };
 		CEDB745321C8C5410030786D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CEDB745621C8C6820030786D /* UIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstant.swift; sourceTree = "<group>"; };
 		CEDB745F21C8D9710030786D /* FindAppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAppDetailController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				CE32C4292226763D004D13B8 /* HomeCenterItemCell.swift */,
 				CE3F9BB72227727900C31E0C /* HomeBottomCollectionView.swift */,
 				CE3F9BC02227BC4E00C31E0C /* HomeBottomItemCell.swift */,
+				CEB38AC322291FF700D06B34 /* HomeDetailCenterView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				CE26129921D1C43000A6BF15 /* MenuFooterView.swift in Sources */,
 				CEDB746221C8D9860030786D /* HomeController.swift in Sources */,
 				CE19B9DF21C3B65000758DE0 /* AppDelegate.swift in Sources */,
+				CEB38AC422291FF700D06B34 /* HomeDetailCenterView.swift in Sources */,
 				CE44E1EF21DDEA6F00546318 /* Reusable.swift in Sources */,
 				CE3F9BC52227D15A00C31E0C /* UIImage+Corner.swift in Sources */,
 				CE32C41D22262B79004D13B8 /* ControllerReusable.swift in Sources */,

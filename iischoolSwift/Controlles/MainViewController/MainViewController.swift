@@ -41,6 +41,7 @@ extension MainViewController{
         homeController = HomeController()
         currentController = homeController
         currentController?.view.frame = self.view.bounds
+        homeController?.delegate = self;
         
         addChild(menuControlller)
         addChild(currentController)
@@ -58,7 +59,7 @@ extension MainViewController{
         self.cover = cover
         currentController.view.addSubview(cover)
         
-        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MainViewController.leftMenuShowAnimate))
+        let tap : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MainViewController.leftMenuHiddenAnimate))
         cover.addGestureRecognizer(tap)
         self.view.bringSubviewToFront(cover)
         
@@ -67,10 +68,18 @@ extension MainViewController{
     @objc fileprivate func leftMenuDidDrag(pan : UIPanGestureRecognizer){
         let point = pan.translation(in: pan.view)
         if (pan.state == .cancelled || pan.state == .ended) {
-            self.leftMenuShowAnimate()
+            self.leftMenuHiddenAnimate()
         }else{
             currentController.view.x += point.x
             pan.setTranslation(CGPoint.zero, in: currentController.view)
+            if currentController.view.x > menuMaxWidth {
+                currentController.view.x = menuMaxWidth
+                cover.isHidden = false
+            }else if currentController.view.x <= 0 {
+                currentController.view.x = 0
+                cover.isHidden = true
+            }
+            
         }
     }
     
@@ -87,7 +96,7 @@ extension MainViewController{
             self.currentController.view.x = 0
             self.cover.isHidden = true
         }) { (finish)->Void in
-            self.currentController.view.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            self.menuControlller.view.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         }
     }
     
@@ -117,10 +126,9 @@ extension MainViewController :MenuControllerDelegate{
             currentController.view.removeFromSuperview()
             currentController.removeFromParent()
             currentController = nil
-            
-                if homeController == nil{
-                    homeController = HomeController()
-                    homeController?.delegate = self
+            if homeController == nil{
+                homeController = HomeController()
+                homeController?.delegate = self
             }
             
             

@@ -50,9 +50,9 @@ class HomeCenterItemCell: UICollectionViewCell,Reusable {
     fileprivate lazy var detailLabel:UILabel = {
         var detailLabel = UILabel()
         detailLabel.textColor = UIColor.darkGray
-        detailLabel.backgroundColor = UIColor.lightGray
-        detailLabel.alpha = 0.5
-        detailLabel.layer.cornerRadius = 10
+        detailLabel.textAlignment = .left
+        detailLabel.font = UIConstant.FONT_14
+        detailLabel.numberOfLines = 0
         return detailLabel
     }()
     
@@ -97,7 +97,12 @@ class HomeCenterItemCell: UICollectionViewCell,Reusable {
     
     var model : HomeModel!{
         didSet{
-            
+            self.titleLabel.text = model.title
+            self.subTitleLabel.text = model.sub_title
+            self.coverImageView.nice_setImage(imageURL: URL(string: model.cover_image))
+            self.detailLabel.text = model.digest
+            self.praiseLabel.text = model.info.up
+            self.authorNameLabel.text = model.author_username
         }
     }
     
@@ -129,7 +134,6 @@ extension HomeCenterItemCell {
     detailLabel.snp.makeConstraints { (make) in
         make.left.right.equalTo(titleLabel)
         make.top.equalTo(coverImageView.snp.bottom).offset(UIConstant.MARGIN_15)
-        
     }
     
     praiseCoverView.snp.makeConstraints { (make) in

@@ -9,22 +9,31 @@
 import UIKit
 
 class HomeDetailController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var shadowView : UIView?
+//    var shareView : ShareView?
+    
+    fileprivate var homeDetailModel : HomeModel!
+    //评论
+    fileprivate var page : Int = 1
+    //顶部图片
+    weak var topImageView : UIImageView!
+    
+    fileprivate lazy var  centerView : HomeDetailCenterView = {
+        var centerView = HomeDetailCenterView()
+        
+        return centerView
+    }()
+    
+    convenience init(homeModel : HomeModel){
+        self.init()
+        self.homeDetailModel = homeModel
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
     }
-    */
 
 }
