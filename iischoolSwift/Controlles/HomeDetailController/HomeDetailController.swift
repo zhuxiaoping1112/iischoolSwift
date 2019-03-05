@@ -24,16 +24,46 @@ class HomeDetailController: UIViewController {
         return centerView
     }()
     
+    fileprivate lazy var backBtn : UIButton = {
+        var backBtn = UIButton()
+        backBtn.addTarget(self, action: #selector(HomeDetailController.backBtnDidClick), for: .touchUpInside)
+        backBtn.setImage(UIImage(named: "detail_icon_back_normal"), for: .normal)
+        backBtn.setImage(UIImage(named: "detail_icon_back_pressed"), for: .highlighted)
+        return backBtn
+    }()
+    
+    fileprivate lazy var bottomView : XMHomeDetailBottomView =  {
+        var bottomView = XMHomeDetailBottomView()
+        return bottomView
+    }()
+    
+    
     convenience init(homeModel : HomeModel){
         self.init()
         self.homeDetailModel = homeModel
     }
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        self.view.addSubview(centerView)
+        self.view.addSubview(backBtn)
+        self.view.addSubview(bottomView)
+        self.view.bringSubviewToFront(bottomView)
+        
+        //下拉刷新
+//        self.centerView
+        
     }
 
+}
+
+extension HomeDetailController : HomeDetailCenterViewDelegate{
+    @objc func backBtnDidClick(){
+        
+    }
+    func shareBtnDidClick(){
+        
+    }
 }

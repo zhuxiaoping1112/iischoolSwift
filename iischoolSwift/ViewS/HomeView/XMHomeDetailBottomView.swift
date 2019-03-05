@@ -1,19 +1,14 @@
 //
-//  HomeDetailCenterView.swift
+//  XMHomeDetailBottomView.swift
 //  iischoolSwift
 //
-//  Created by junke on 2019/3/1.
+//  Created by junke on 2019/3/4.
 //  Copyright © 2019 hank. All rights reserved.
 //
 
 import UIKit
 
-protocol HomeDetailCenterViewDelegate {
-    func shareBtnDidClick()
-    func backBtnDidClick()
-}
-
-class HomeDetailCenterView: UIView {
+class XMHomeDetailBottomView: UIScrollView {
 
     /*
     // Only override draw() if you perform custom drawing.
