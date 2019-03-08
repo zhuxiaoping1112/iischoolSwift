@@ -20,7 +20,6 @@ class HomeDetailController: UIViewController {
     
     fileprivate lazy var  centerView : HomeDetailCenterView = {
         var centerView = HomeDetailCenterView()
-        
         return centerView
     }()
     
@@ -43,7 +42,6 @@ class HomeDetailController: UIViewController {
         self.homeDetailModel = homeModel
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
@@ -51,10 +49,8 @@ class HomeDetailController: UIViewController {
         self.view.addSubview(backBtn)
         self.view.addSubview(bottomView)
         self.view.bringSubviewToFront(bottomView)
-        
-        //下拉刷新
-//        self.centerView
-        
+        self.topImageView = centerView.headerImagView
+        self.view.addSubview(toolBar)
     }
 
 }

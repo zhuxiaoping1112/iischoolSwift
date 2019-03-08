@@ -11,6 +11,6 @@ import Foundation
 extension UIScrollView {
     func headerViewPullToRefresh(direction: XMRefreshDirection , callBack:(() -> Void)?){
         //创建headerView
-        let headerView : XMRefreshHeaderView = XMRefreshHeaderView.();
+        let _ : XMRefreshHeaderView = XMRefreshHeaderView.headerView();
     }
 }
