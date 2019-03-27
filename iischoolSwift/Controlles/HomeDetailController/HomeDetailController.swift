@@ -18,11 +18,18 @@ class HomeDetailController: UIViewController {
     //顶部图片
     weak var topImageView : UIImageView!
     
-    fileprivate lazy var  centerView : HomeDetailCenterView = {
-        var centerView = HomeDetailCenterView()
+    // scrollview
+    fileprivate lazy var centerView: HomeDetailCenterView = {
+        let centerView = HomeDetailCenterView()
+        centerView.frame = CGRect(x: 0, y: 0, width: UIConstant.SCREEN_WIDTH, height: UIConstant.SCREEN_HEIGHT)
+        centerView.delegate = self as? UIScrollViewDelegate
+        centerView.centerDelegate = self
         return centerView
     }()
     
+    fileprivate lazy var toolBar : XMHomeDetailToolView = {
+        let
+    }()
     fileprivate lazy var backBtn : UIButton = {
         var backBtn = UIButton()
         backBtn.addTarget(self, action: #selector(HomeDetailController.backBtnDidClick), for: .touchUpInside)

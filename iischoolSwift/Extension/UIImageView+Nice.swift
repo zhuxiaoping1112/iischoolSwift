@@ -12,11 +12,11 @@ import YYWebImage
 
 extension UIImageView{
     public func nice_setImage(imageURL: URL!){
-        self.nice_setImage(imageURL: imageURL ,placeHolderImage:UIImage(named: "home_logo_pressed"))
+        self.nice_setImage(imageURL: imageURL ,placeholderImage:UIImage(named: "home_logo_pressed"))
     }
     
-    public func nice_setImage(imageURL: URL!,placeHolderImage : UIImage!){
-        self.yy_setImage(with: imageURL, placeholder: placeHolderImage, options: [.setImageWithFadeAnimation,.progressiveBlur], completion: nil)
+    public func nice_setImage(imageURL: URL!,placeholderImage : UIImage!){
+        self.yy_setImage(with: imageURL, placeholder: placeholderImage, options: [.setImageWithFadeAnimation,.progressiveBlur], completion: nil)
     }
     
     public func nice_setImage(imageURL: URL!, imageCornerRadius: CGFloat) {
@@ -27,7 +27,7 @@ extension UIImageView{
         }
     }
     
-    public func nice_setImage(imageURL: URL!, placeHolderImage: UIImage,imageCornerRadius:CGFloat){
+    public func nice_setImage(imageURL: URL!, placeholderImage: UIImage,imageCornerRadius:CGFloat){
         
     }
     
