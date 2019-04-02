@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		78325D30848D9D71C34FEB1B /* Pods_iischoolSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */; };
+		8243044C22504EC200086ED7 /* XMHomeDetailToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8243044B22504EC200086ED7 /* XMHomeDetailToolView.xib */; };
+		82936A9F2250F94B006A408B /* XMHomeDetailToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82936A9E2250F94B006A408B /* XMHomeDetailToolView.swift */; };
+		82A45F2D2253A79400062232 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A45F2C2253A79400062232 /* CommentCell.swift */; };
 		82D709E921DF5CF300632687 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D709E821DF5CF300632687 /* APIConstant.swift */; };
 		CE07C0DB21CB3D7400C223B8 /* MenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07C0DA21CB3D7400C223B8 /* MenuHeaderView.swift */; };
 		CE0EA50921D7517B00754924 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0EA50821D7517B00754924 /* MenuTableViewCell.swift */; };
@@ -48,6 +51,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8243044B22504EC200086ED7 /* XMHomeDetailToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMHomeDetailToolView.xib; sourceTree = "<group>"; };
+		82936A9E2250F94B006A408B /* XMHomeDetailToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMHomeDetailToolView.swift; sourceTree = "<group>"; };
+		82A45F2C2253A79400062232 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		82D709E821DF5CF300632687 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		88B08ACE5429B699409CFA95 /* Pods_iischoolSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iischoolSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E794BDF160705E8DD1E3129 /* Pods-iischoolSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iischoolSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iischoolSwift/Pods-iischoolSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8243044822504B5600086ED7 /* HomeDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				82936A9E2250F94B006A408B /* XMHomeDetailToolView.swift */,
+				8243044B22504EC200086ED7 /* XMHomeDetailToolView.xib */,
+			);
+			path = HomeDetailView;
+			sourceTree = "<group>";
+		};
 		8EBA93DBDC3C99F999D2CB14 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +140,10 @@
 		CE07C0D921CB3CE100C223B8 /* ViewS */ = {
 			isa = PBXGroup;
 			children = (
+				8243044822504B5600086ED7 /* HomeDetailView */,
 				CE32C41E222630B2004D13B8 /* HomeView */,
 				CE0EA50721D7143000754924 /* MenuView */,
+				82A45F2C2253A79400062232 /* CommentCell.swift */,
 			);
 			path = ViewS;
 			sourceTree = "<group>";
@@ -382,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8243044C22504EC200086ED7 /* XMHomeDetailToolView.xib in Resources */,
 				CE19B9E921C3B65100758DE0 /* LaunchScreen.storyboard in Resources */,
 				CE19B9E621C3B65100758DE0 /* Assets.xcassets in Resources */,
 				CE19B9E421C3B65000758DE0 /* Main.storyboard in Resources */,
@@ -483,9 +501,11 @@
 				CE122CCB222CD34B005B319C /* XMRefreshBase.swift in Sources */,
 				CE44E1EF21DDEA6F00546318 /* Reusable.swift in Sources */,
 				CE3F9BC52227D15A00C31E0C /* UIImage+Corner.swift in Sources */,
+				82A45F2D2253A79400062232 /* CommentCell.swift in Sources */,
 				CE32C41D22262B79004D13B8 /* ControllerReusable.swift in Sources */,
 				CE32C420222630D4004D13B8 /* HomeHeaderView.swift in Sources */,
 				CE0EA50921D7517B00754924 /* MenuTableViewCell.swift in Sources */,
+				82936A9F2250F94B006A408B /* XMHomeDetailToolView.swift in Sources */,
 				CE122CD2222E3FBA005B319C /* XMRefreshHeaderView.swift in Sources */,
 				CE44E1E921DDABA100546318 /* MenuTabModel.swift in Sources */,
 				CE46BD7E21C4C65400C933DE /* IFBaseNavController.swift in Sources */,

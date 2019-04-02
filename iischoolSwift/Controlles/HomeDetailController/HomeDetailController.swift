@@ -28,7 +28,9 @@ class HomeDetailController: UIViewController {
     }()
     
     fileprivate lazy var toolBar : XMHomeDetailToolView = {
-        let
+        var toolBar = XMHomeDetailToolView.toolView()
+        toolBar.delegate = self as XMHomeDetailToolViewDelegate
+        return toolBar
     }()
     fileprivate lazy var backBtn : UIButton = {
         var backBtn = UIButton()
@@ -60,6 +62,22 @@ class HomeDetailController: UIViewController {
         self.view.addSubview(toolBar)
     }
 
+}
+
+extension HomeDetailController : XMHomeDetailToolViewDelegate{
+    func homeDetailToolViewCollectBtnClick() {
+        print("收藏点击")
+    }
+    
+    func homeDetailToolViewShareBtnClick() {
+        print("分享点击")
+    }
+    
+    func homeDetailToolViewDownloadBtnClick() {
+        print("下载点击")
+    }
+    
+    
 }
 
 extension HomeDetailController : HomeDetailCenterViewDelegate{

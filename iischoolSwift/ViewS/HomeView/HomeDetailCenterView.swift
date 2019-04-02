@@ -16,8 +16,22 @@ protocol HomeDetailCenterViewDelegate {
 class HomeDetailCenterView: UIScrollView {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        centerView.frame = self.bounds
+        self.addSubview(centerView)
+        headerImagView.frame = CGRect(x: 0, y: 0, width: UIConstant.SCREEN_WIDTH, height: 170)
+        centerView.addSubview(headerImagView)
+        appIconView.frame = CGRect(x: UIConstant.MARGIN_20, y:headerImagView.frame.maxY + UIConstant.MARGIN_20, width: 50, height: 50)
+        centerView.addSubview(appIconView)
+        let appTitleLableX = appIconView.frame.maxX + UIConstant.MARGIN_20
+        let appTitleLableW = UIConstant.SCREEN_WIDTH - UIConstant.MARGIN_20 - appTitleLableX
+        appTitleLabel.frame = CGRect(x: appTitleLableX, y: appIconView.frame.maxY, width: appTitleLableW, height: 20)
+        self.centerView.addSubview(appTitleLabel)
         
+        //app详情
+        appDetailLabel.frame = CGRect(x: appTitleLableX, y: appTitleLabel.frame.maxY, width: appTitleLableW, height: 20)
+        self.centerView.addSubview(appDetailLabel)
         
+        contentY = headerImagView.height+UIConstant.MARGIN_20+100
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,6 +39,18 @@ class HomeDetailCenterView: UIScrollView {
     }
     //MARK:- private Methods
     private func setupOtherData() {
+    }
+    
+    //Mark------------设置评论数--------------
+    func setCommentData(comments :Array<CommentModel>){
+        if comments.count != 0 {
+            for i in 0..<comments.count{
+                let commentView = CommentCell(frame: CGRect(x: 0, y: contentY, width: UIConstant.SCREEN_WIDTH, height: 50))
+                commentView.setData(model: comments[i])
+                self.centerView.addSubview(commentView)
+                contentY += commentView.height
+            }
+        }
     }
     
     //计算文字高度
@@ -39,14 +65,14 @@ class HomeDetailCenterView: UIScrollView {
     
     //MARK: - Public Method
     func updateHeaderView() {
-        let HeaderHeight : CGFloat = headerImgView.height
+        let HeaderHeight : CGFloat = headerImagView.height
         let HeaderCutAway: CGFloat = 170
         
         var headerRect = CGRect(x: 0, y: 0, width: UIConstant.SCREEN_WIDTH, height: HeaderHeight)
         if self.contentOffset.y < 0 {
             headerRect.origin.y = self.contentOffset.y
             headerRect.size.height = -self.contentOffset.y + HeaderCutAway
-            headerImgView.frame = headerRect
+            headerImagView.frame = headerRect
         }
     }
 
@@ -59,7 +85,7 @@ class HomeDetailCenterView: UIScrollView {
     var centerDelegate: HomeDetailCenterViewDelegate?
     var model: HomeModel! {
         didSet {
-            self.headerImgView.nice_setImage(imageURL: URL(string: model.cover_image!))
+            self.headerImagView.nice_setImage(imageURL: URL(string: model.cover_image!))
             // 图标
             self.appIconView.nice_setImage(imageURL: URL(string: model.icon_image!), placeholderImage: UIImage(named: "ic_launcher")!)
             self.appTitleLabel.text = model.title!
@@ -77,10 +103,10 @@ class HomeDetailCenterView: UIScrollView {
     }()
     
     // 顶部图片
-    lazy var headerImgView : UIImageView = {
-        let headerImgView : UIImageView = UIImageView(image: UIImage(named: "home_logo_pressed"))
-        headerImgView.contentMode = .scaleAspectFill
-        return headerImgView
+    lazy var headerImagView : UIImageView = {
+        let headerImagView : UIImageView = UIImageView(image: UIImage(named: "home_logo_pressed"))
+        headerImagView.contentMode = .scaleAspectFill
+        return headerImagView
     }()
     
     // appIcon

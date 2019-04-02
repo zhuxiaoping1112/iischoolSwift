@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="XMHomeDetailToolView" customModule="iischoolSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-ZR-11D">
+                    <rect key="frame" x="45" y="0.0" width="230" height="30"/>
+                    <subviews>
+                        <button opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37P-bi-9DV">
+                            <rect key="frame" x="0.0" y="0.0" width="33.5" height="30"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                            <state key="normal" title="收藏" image="detail_icon_fav_normal"/>
+                            <connections>
+                                <action selector="toolViewBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="kNj-To-26E"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5u-eB-UXE" userLabel="收藏">
+                            <rect key="frame" x="38.5" y="0.0" width="35" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQg-KY-BkZ">
+                            <rect key="frame" x="78.5" y="0.0" width="33" height="30"/>
+                            <state key="normal" title="分享" image="detail_icon_share_normal"/>
+                            <connections>
+                                <action selector="toolViewBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="7kn-80-v42"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7O-aI-U3Z" userLabel="分享">
+                            <rect key="frame" x="116.5" y="0.0" width="35" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" clipsSubviews="YES" tag="1003" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8U-Eb-g73">
+                            <rect key="frame" x="156.5" y="0.0" width="33.5" height="30"/>
+                            <state key="normal" title="下载" image="detail_icon_download_normal"/>
+                            <connections>
+                                <action selector="toolViewBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="U9r-hN-xIY"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下载" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqC-SZ-Gui" userLabel="下载">
+                            <rect key="frame" x="195" y="0.0" width="35" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="EqC-SZ-Gui" firstAttribute="width" secondItem="b7O-aI-U3Z" secondAttribute="width" id="Mco-3h-XHG"/>
+                        <constraint firstItem="lQg-KY-BkZ" firstAttribute="width" secondItem="37P-bi-9DV" secondAttribute="width" priority="750" id="SFA-dQ-3Vh"/>
+                        <constraint firstItem="b7O-aI-U3Z" firstAttribute="width" secondItem="i5u-eB-UXE" secondAttribute="width" priority="750" id="eu7-Kw-3Kg"/>
+                        <constraint firstItem="o8U-Eb-g73" firstAttribute="width" secondItem="lQg-KY-BkZ" secondAttribute="width" id="jvW-FQ-wZc"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="MeE-ZR-11D" secondAttribute="trailing" constant="45" id="3SY-re-nu8"/>
+                <constraint firstItem="MeE-ZR-11D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="K5l-do-Jzg"/>
+                <constraint firstAttribute="bottom" secondItem="MeE-ZR-11D" secondAttribute="bottom" id="gj9-9M-hx4"/>
+                <constraint firstItem="MeE-ZR-11D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pc6-aH-Nk3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="91.875" y="13.732394366197184"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="detail_icon_download_normal" width="80" height="80"/>
+        <image name="detail_icon_fav_normal" width="80" height="80"/>
+        <image name="detail_icon_share_normal" width="80" height="80"/>
+    </resources>
+</document>
