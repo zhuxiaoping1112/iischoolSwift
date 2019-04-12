@@ -24,13 +24,12 @@ class HomeDetailCenterView: UIScrollView {
         centerView.addSubview(appIconView)
         let appTitleLableX = appIconView.frame.maxX + UIConstant.MARGIN_20
         let appTitleLableW = UIConstant.SCREEN_WIDTH - UIConstant.MARGIN_20 - appTitleLableX
-        appTitleLabel.frame = CGRect(x: appTitleLableX, y: appIconView.frame.maxY, width: appTitleLableW, height: 20)
+        appTitleLabel.frame = CGRect(x: appTitleLableX, y: appIconView.frame.maxY+25, width: appTitleLableW, height: 20)
         self.centerView.addSubview(appTitleLabel)
         
         //app详情
         appDetailLabel.frame = CGRect(x: appTitleLableX, y: appTitleLabel.frame.maxY, width: appTitleLableW, height: 20)
         self.centerView.addSubview(appDetailLabel)
-        
         contentY = headerImagView.height+UIConstant.MARGIN_20+100
     }
     
@@ -81,7 +80,6 @@ class HomeDetailCenterView: UIScrollView {
     //MARK: - getter or setter
     // 记录当前高度
     private var contentY: CGFloat = 0
-
     var centerDelegate: HomeDetailCenterViewDelegate?
     var model: HomeModel! {
         didSet {
@@ -91,7 +89,6 @@ class HomeDetailCenterView: UIScrollView {
             self.appTitleLabel.text = model.title!
             self.appDetailLabel.text = model.sub_title!
             // 添加其他控件
-            
             self.setupOtherData()
         }
     }

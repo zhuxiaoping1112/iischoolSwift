@@ -163,8 +163,8 @@ extension HomeController :UICollectionViewDelegate,UICollectionViewDataSource{
         //        self.rectInView = CGRect(x: rectInSuperView.origin.x+cell.coverImageView.x, y: rectInSuperView.origin.y+cell.coverImageView.y, width: rectInSuperView.width, height: cell.coverImageView.height)
         // 获取模型
         let model = homeModelArray[indexPath.row]
-//        let detailController = HomeDetailController(model: model)
-        let detailController = HomeDetailController()
+        let detailController = HomeDetailController(model: model)
+//        let detailController = HomeDetailController()
         self.navigationController?.pushViewController(detailController, animated: true)
     }
 }

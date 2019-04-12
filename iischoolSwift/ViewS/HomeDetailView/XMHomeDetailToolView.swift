@@ -15,6 +15,9 @@ protocol XMHomeDetailToolViewDelegate{
 import UIKit
 
 class XMHomeDetailToolView: UIView {
+    @IBOutlet weak var xiaZhaiBtn: UIButton!
+    @IBOutlet weak var fenXiang: UIButton!
+    @IBOutlet weak var shouChang: UIButton!
     var delegate : XMHomeDetailToolViewDelegate?
     @IBAction func toolViewBtnClick(_ sender: Any) {
         print("\(sender)");
@@ -37,5 +40,12 @@ class XMHomeDetailToolView: UIView {
         // Drawing code
     }
     */
-
+    convenience override init(frame: CGRect) {
+        self.init()
+        self.shouChang.imageView?.contentMode = .center
+        self.fenXiang.imageView?.contentMode = .center
+        self.xiaZhaiBtn.imageView?.contentMode = .center
+    }
+    
+    
 }

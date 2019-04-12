@@ -19,7 +19,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-ZR-11D">
                     <rect key="frame" x="45" y="0.0" width="230" height="30"/>
                     <subviews>
-                        <button opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37P-bi-9DV">
+                        <button opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="bottom" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37P-bi-9DV">
                             <rect key="frame" x="0.0" y="0.0" width="33.5" height="30"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                             <state key="normal" title="收藏" image="detail_icon_fav_normal"/>
@@ -33,7 +33,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQg-KY-BkZ">
+                        <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQg-KY-BkZ">
                             <rect key="frame" x="78.5" y="0.0" width="33" height="30"/>
                             <state key="normal" title="分享" image="detail_icon_share_normal"/>
                             <connections>
@@ -77,6 +77,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="fenXiang" destination="lQg-KY-BkZ" id="8g9-pK-XdE"/>
+                <outlet property="shouChang" destination="37P-bi-9DV" id="5Cv-1l-oRs"/>
+                <outlet property="xiaZhaiBtn" destination="o8U-Eb-g73" id="CoO-Vl-DSk"/>
+            </connections>
             <point key="canvasLocation" x="91.875" y="13.732394366197184"/>
         </view>
     </objects>
