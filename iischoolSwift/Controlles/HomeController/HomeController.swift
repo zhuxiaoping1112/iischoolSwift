@@ -68,7 +68,6 @@ class HomeController: UIViewController,ControllerReusable {
         }
     }
     
-    
     /// 顶部view
     fileprivate lazy var headerView: HomeHeaderView = {
         var headerView = HomeHeaderView()
@@ -114,6 +113,10 @@ class HomeController: UIViewController,ControllerReusable {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    // 当点击cell时获取当前图片和rect, 用于做转场动画
+    weak var curImgView : UIImageView?
+    fileprivate var rectInView : CGRect?
 }
 //MARK: ------------------HeaderViewDelegate-----------------
 extension HomeController :HeaderViewDelegate{
@@ -154,17 +157,16 @@ extension HomeController :UICollectionViewDelegate,UICollectionViewDataSource{
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        // 获取cell中的图片 和 rect 用于做转场动画
-        //        let cell = collectionView.cellForItem(at: indexPath) as! HomeCenterItemCell
-        //        self.curImgView = cell.coverImageView
-        //        // 计算collection点击的item在屏幕中的位置
-        //        let rectInCollectionView = (collectionView.layoutAttributesForItem(at: indexPath)?.frame)!
-        //        let rectInSuperView = collectionView.convert(rectInCollectionView, to: collectionView.superview)
-        //        self.rectInView = CGRect(x: rectInSuperView.origin.x+cell.coverImageView.x, y: rectInSuperView.origin.y+cell.coverImageView.y, width: rectInSuperView.width, height: cell.coverImageView.height)
+//                // 获取cell中的图片 和 rect 用于做转场动画
+//                let cell = collectionView.cellForItem(at: indexPath) as! HomeCenterItemCell
+//                self.curImgView = cell.coverImageView
+//                // 计算collection点击的item在屏幕中的位置
+//                let rectInCollectionView = (collectionView.layoutAttributesForItem(at: indexPath)?.frame)!
+//                let rectInSuperView = collectionView.convert(rectInCollectionView, to: collectionView.superview)
+//                self.rectInView = CGRect(x: rectInSuperView.origin.x+cell.coverImageView.x, y: rectInSuperView.origin.y+cell.coverImageView.y, width: rectInSuperView.width, height: cell.coverImageView.height)
         // 获取模型
         let model = homeModelArray[indexPath.row]
         let detailController = HomeDetailController(model: model)
-//        let detailController = HomeDetailController()
         self.navigationController?.pushViewController(detailController, animated: true)
     }
 }
@@ -205,6 +207,19 @@ extension HomeController {
             
         }
     
+        }
+    }
+}
+
+//MARK: ------------------ScrollViewDelegate-----------------
+extension HomeController{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.tag == 100{
+            let index = Int(round(scrollView.contentOffset.x/scrollView.width))
+            guard self.currentIndex.row != index else{
+                return
+            }
+            self.currentIndex = index > homeModelArray.count - 1 ? IndexPath(row: self.homeModelArray.count - 1, section: 0):IndexPath(row: index, section: 0)
         }
     }
 }

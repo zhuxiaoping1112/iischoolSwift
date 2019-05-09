@@ -24,7 +24,7 @@ class HomeDetailCenterView: UIScrollView {
         centerView.addSubview(appIconView)
         let appTitleLableX = appIconView.frame.maxX + UIConstant.MARGIN_20
         let appTitleLableW = UIConstant.SCREEN_WIDTH - UIConstant.MARGIN_20 - appTitleLableX
-        appTitleLabel.frame = CGRect(x: appTitleLableX, y: appIconView.frame.maxY+25, width: appTitleLableW, height: 20)
+        appTitleLabel.frame = CGRect(x: appTitleLableX, y: headerImagView.frame.maxY + UIConstant.MARGIN_20, width: appTitleLableW, height: 20)
         self.centerView.addSubview(appTitleLabel)
         
         //app详情
@@ -38,6 +38,97 @@ class HomeDetailCenterView: UIScrollView {
     }
     //MARK:- private Methods
     private func setupOtherData() {
+        // 计算文字高度，添加app描述文段
+        let describeLabel = self.createPTitleLabel()
+        self.centerView.addSubview(describeLabel)
+        let descriSize = self.calculateTextHeight(text: model.digest!, label: describeLabel)
+        describeLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: contentY + UIConstant.MARGIN_10, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: descriSize.height)
+        contentY = describeLabel.frame.maxY + UIConstant.MARGIN_20
+        // 添加http文段
+        let _ = XMLParserUtil(content: model.content!) { [unowned self](array) -> Void in
+            // 拿到解析完的数组后添加控件
+            for contentModel in array {
+                
+                if contentModel.contentType == XMLContentType.XMLContentTypeH2 {
+                    // 标题
+                    self.contentY += UIConstant.MARGIN_10
+                    let h2TitlLabel = self.createH2TitleLabel()
+                    h2TitlLabel.text = contentModel.content
+                    h2TitlLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: 20)
+                    self.centerView.addSubview(h2TitlLabel)
+                    self.contentY += h2TitlLabel.height + UIConstant.MARGIN_10
+                } else if contentModel.contentType == XMLContentType.XMLContentTypeP {
+                    // 描述
+                    let pTitleLabel = self.createPTitleLabel()
+                    pTitleLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: 20)
+                    let pTitleSize = self.calculateTextHeight(text: contentModel.content, label: pTitleLabel)
+                    self.centerView.addSubview(pTitleLabel)
+                    self.contentY += pTitleSize.height + UIConstant.MARGIN_10
+                } else if contentModel.contentType == XMLContentType.XMLContentTypeA {
+                    // 点击下载
+                    let aTitleBtn = self.createATitleButton()
+                    aTitleBtn.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: 60, height: 20)
+                    self.centerView.addSubview(aTitleBtn)
+                    self.contentY += aTitleBtn.height + UIConstant.MARGIN_10
+                } else if contentModel.contentType == XMLContentType.XMLContentTypeImg {
+                    
+                    // 根据url 获取图片高度
+                    let size : CGSize = contentModel.content.getImageSizeWithURL()
+                    // 获取 _ 的位置
+                    let imgView : UIImageView = self.createImgView()
+                    imgView.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: size.width, height: size.height)
+                    imgView.center.x = UIConstant.SCREEN_WIDTH*0.5
+                    print("图片地址\(String(describing: contentModel.content))")
+                    let stringUrl : String = contentModel.content.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+                    imgView.nice_setImage(imageURL:URL(string: stringUrl))
+                    self.centerView.addSubview(imgView)
+                    self.contentY += size.height + UIConstant.MARGIN_10
+                }
+            }
+        }
+        
+        
+        // 分享view
+//        let shareView : XMHomeDetailShareView = XMHomeDetailShareView.shareView()
+//        shareView.frame = CGRect(x: UIConstant.MARGIN_10, y: contentY, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: shareView.height)
+//        shareView.centerViewDidClickWithBlock { [unowned self]() -> Void in
+//            self.centerDelegate?.shareBtnDidClick()
+//        }
+//        self.centerView.addSubview(shareView)
+//        contentY += shareView.height
+        
+        // 评论view
+        if model.comments.count != 0 {
+            let commentLabel = self.createTitleViwe(title: "评论")
+            commentLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: contentY+2*UIConstant.MARGIN_10, width: 35, height: 20)
+            contentY = commentLabel.frame.maxY+UIConstant.MARGIN_10;
+            // 分割线
+            let sepLine = self.createTitleSeparatLine()
+            sepLine.frame = CGRect(x: commentLabel.frame.maxX, y: commentLabel.center.y, width:80, height: 0.5)
+            
+            // 添加评论
+            for i in 0..<model.comments.count {
+                let commentView = CommentCell(frame: CGRect(x: 0, y: contentY, width: UIConstant.SCREEN_WIDTH, height: 50))
+                commentView.setData(model: self.model.comments[i])
+                self.centerView.addSubview(commentView)
+                contentY += commentView.height
+            }
+        }
+        
+        // 设置contentsize
+        self.centerView.height = contentY
+        self.contentSize = CGSize(width: 0, height: contentY)
+    }
+    
+    private func calculateTextHeight (text: String, label:UILabel) ->CGSize{
+        let  attributstring : NSMutableAttributedString = NSMutableAttributedString(string: text)
+        let  paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5.0
+        attributstring.addAttributes([NSAttributedString.Key.paragraphStyle : paragraphStyle], range: NSMakeRange(0, text.count))
+        
+        let size = (text as String).boundingRect(with: CGSize(width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: CGFloat.greatestFiniteMagnitude),options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:UIConstant.FONT_16],context: nil).size
+        label.attributedText = attributstring;
+        return size
     }
     
     //Mark------------设置评论数--------------
@@ -50,16 +141,6 @@ class HomeDetailCenterView: UIScrollView {
                 contentY += commentView.height
             }
         }
-    }
-    
-    //计算文字高度
-    func calculateTextHeight(text : String , lable : UILabel) -> CGSize {
-        let attribute : NSMutableAttributedString = NSMutableAttributedString(string: text)
-        let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5.0
-        attribute.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0 , text.count));
-        let size = (text as NSString).boundingRect(with: CGSize(width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font : UIConstant.FONT_16], context: nil).size
-        return size
     }
     
     //MARK: - Public Method

@@ -29,8 +29,9 @@ class HomeDetailController: UIViewController {
     
     fileprivate lazy var toolBar : XMHomeDetailToolView = {
         var toolBar = XMHomeDetailToolView.toolView()
-        toolBar.frame = CGRect(x: 0, y: 245, width: UIConstant.SCREEN_WIDTH, height: 30)
+        toolBar.frame = CGRect(x: 0, y: 260, width: UIConstant.SCREEN_WIDTH, height: 30)
         toolBar.delegate = self as XMHomeDetailToolViewDelegate
+        toolBar.backgroundColor = UIColor.yellow
         return toolBar
     }()
     
@@ -93,7 +94,7 @@ extension HomeDetailController : HomeDetailCenterViewDelegate{
 
 extension HomeDetailController{
     fileprivate func getCommentData(){
-        print("\(self.model.id!)")
+        print("信息id:\(self.model.id!)")
         niceProvider.request(APIConstant.comment(self.model.id, self.page), completion: { result in
             switch result{
                 case let .success(response):
