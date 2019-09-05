@@ -43,6 +43,8 @@ class HomeDetailCenterView: UIScrollView {
         self.centerView.addSubview(describeLabel)
         let descriSize = self.calculateTextHeight(text: model.digest!, label: describeLabel)
         describeLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: contentY + UIConstant.MARGIN_10, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: descriSize.height)
+        let newHtmlStr :NSAttributedString = NSAttributedString(string: "<head><style>img{width:%f !important;height:auto}</style></head>%@", attributes: UIConstant.SCREEN_WIDTH,model.content)
+        describeLabel.attributedText = newHtmlStr
         contentY = describeLabel.frame.maxY + UIConstant.MARGIN_20
         // 添加http文段
         let _ = XMLParserUtil(content: model.content!) { [unowned self](array) -> Void in
@@ -60,7 +62,7 @@ class HomeDetailCenterView: UIScrollView {
                 } else if contentModel.contentType == XMLContentType.XMLContentTypeP {
                     // 描述
                     let pTitleLabel = self.createPTitleLabel()
-                    pTitleLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: 20)
+                    pTitleLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: 15)
                     let pTitleSize = self.calculateTextHeight(text: contentModel.content, label: pTitleLabel)
                     self.centerView.addSubview(pTitleLabel)
                     self.contentY += pTitleSize.height + UIConstant.MARGIN_10

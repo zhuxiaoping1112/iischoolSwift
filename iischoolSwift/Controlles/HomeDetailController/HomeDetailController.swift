@@ -29,9 +29,9 @@ class HomeDetailController: UIViewController {
     
     fileprivate lazy var toolBar : XMHomeDetailToolView = {
         var toolBar = XMHomeDetailToolView.toolView()
-        toolBar.frame = CGRect(x: 0, y: 260, width: UIConstant.SCREEN_WIDTH, height: 30)
+        toolBar.frame = CGRect(x: 0, y: 300, width: UIConstant.SCREEN_WIDTH, height: 30)
         toolBar.delegate = self as XMHomeDetailToolViewDelegate
-        toolBar.backgroundColor = UIColor.yellow
+        toolBar.backgroundColor = UIColor.clear
         return toolBar
     }()
     
@@ -88,7 +88,7 @@ extension HomeDetailController : HomeDetailCenterViewDelegate{
         self.navigationController?.popViewController(animated: true)
     }
     func shareBtnDidClick(){
-        
+        print("shareBtnClic\(self.backBtn)")
     }
 }
 
@@ -137,6 +137,17 @@ extension HomeDetailController{
             make.left.right.bottom.equalTo(self.view)
             make.height.equalTo(40)
         }
+    }
+}
+
+extension HomeDetailController :UIScrollViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y >= 215{
+            self.toolBar.y = self.backBtn.y
+        }else{
+            self.toolBar.y = 245 - scrollView.contentOffset.y;
+        }
+        
     }
 }
 
