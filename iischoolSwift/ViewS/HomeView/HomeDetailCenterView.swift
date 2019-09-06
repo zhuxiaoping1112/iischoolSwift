@@ -42,52 +42,58 @@ class HomeDetailCenterView: UIScrollView {
         let describeLabel = self.createPTitleLabel()
         self.centerView.addSubview(describeLabel)
         let descriSize = self.calculateTextHeight(text: model.digest!, label: describeLabel)
-        describeLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: contentY + UIConstant.MARGIN_10, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: descriSize.height)
-        let newHtmlStr :NSAttributedString = NSAttributedString(string: "<head><style>img{width:%f !important;height:auto}</style></head>%@", attributes: UIConstant.SCREEN_WIDTH,model.content)
-        describeLabel.attributedText = newHtmlStr
+        describeLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: contentY + UIConstant.MARGIN_10, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: 2500)
+        let newStr : String = String(format: "<head><style>img{width:%f !important;height:auto}</style></head>%@", arguments:[UIConstant.SCREEN_WIDTH,model.content])
+        do {
+            let attrStr = try NSAttributedString(data: newStr.data(using: String.Encoding.unicode, allowLossyConversion: true)!, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+            describeLabel.attributedText = attrStr
+        } catch {
+            print("解析html出错 : \(error)")
+            describeLabel.text = ""
+        }
         contentY = describeLabel.frame.maxY + UIConstant.MARGIN_20
         // 添加http文段
-        let _ = XMLParserUtil(content: model.content!) { [unowned self](array) -> Void in
-            // 拿到解析完的数组后添加控件
-            for contentModel in array {
-                
-                if contentModel.contentType == XMLContentType.XMLContentTypeH2 {
-                    // 标题
-                    self.contentY += UIConstant.MARGIN_10
-                    let h2TitlLabel = self.createH2TitleLabel()
-                    h2TitlLabel.text = contentModel.content
-                    h2TitlLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: 20)
-                    self.centerView.addSubview(h2TitlLabel)
-                    self.contentY += h2TitlLabel.height + UIConstant.MARGIN_10
-                } else if contentModel.contentType == XMLContentType.XMLContentTypeP {
-                    // 描述
-                    let pTitleLabel = self.createPTitleLabel()
-                    pTitleLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: 15)
-                    let pTitleSize = self.calculateTextHeight(text: contentModel.content, label: pTitleLabel)
-                    self.centerView.addSubview(pTitleLabel)
-                    self.contentY += pTitleSize.height + UIConstant.MARGIN_10
-                } else if contentModel.contentType == XMLContentType.XMLContentTypeA {
-                    // 点击下载
-                    let aTitleBtn = self.createATitleButton()
-                    aTitleBtn.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: 60, height: 20)
-                    self.centerView.addSubview(aTitleBtn)
-                    self.contentY += aTitleBtn.height + UIConstant.MARGIN_10
-                } else if contentModel.contentType == XMLContentType.XMLContentTypeImg {
-                    
-                    // 根据url 获取图片高度
-                    let size : CGSize = contentModel.content.getImageSizeWithURL()
-                    // 获取 _ 的位置
-                    let imgView : UIImageView = self.createImgView()
-                    imgView.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: size.width, height: size.height)
-                    imgView.center.x = UIConstant.SCREEN_WIDTH*0.5
-                    print("图片地址\(String(describing: contentModel.content))")
-                    let stringUrl : String = contentModel.content.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-                    imgView.nice_setImage(imageURL:URL(string: stringUrl))
-                    self.centerView.addSubview(imgView)
-                    self.contentY += size.height + UIConstant.MARGIN_10
-                }
-            }
-        }
+//        let _ = XMLParserUtil(content: model.content!) { [unowned self](array) -> Void in
+//            // 拿到解析完的数组后添加控件
+//            for contentModel in array {
+//
+//                if contentModel.contentType == XMLContentType.XMLContentTypeH2 {
+//                    // 标题
+//                    self.contentY += UIConstant.MARGIN_10
+//                    let h2TitlLabel = self.createH2TitleLabel()
+//                    h2TitlLabel.text = contentModel.content
+//                    h2TitlLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: 20)
+//                    self.centerView.addSubview(h2TitlLabel)
+//                    self.contentY += h2TitlLabel.height + UIConstant.MARGIN_10
+//                } else if contentModel.contentType == XMLContentType.XMLContentTypeP {
+//                    // 描述
+//                    let pTitleLabel = self.createPTitleLabel()
+//                    pTitleLabel.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: UIConstant.SCREEN_WIDTH-2*UIConstant.MARGIN_10, height: 15)
+//                    let pTitleSize = self.calculateTextHeight(text: contentModel.content, label: pTitleLabel)
+//                    self.centerView.addSubview(pTitleLabel)
+//                    self.contentY += pTitleSize.height + UIConstant.MARGIN_10
+//                } else if contentModel.contentType == XMLContentType.XMLContentTypeA {
+//                    // 点击下载
+//                    let aTitleBtn = self.createATitleButton()
+//                    aTitleBtn.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: 60, height: 20)
+//                    self.centerView.addSubview(aTitleBtn)
+//                    self.contentY += aTitleBtn.height + UIConstant.MARGIN_10
+//                } else if contentModel.contentType == XMLContentType.XMLContentTypeImg {
+//
+//                    // 根据url 获取图片高度
+//                    let size : CGSize = contentModel.content.getImageSizeWithURL()
+//                    // 获取 _ 的位置
+//                    let imgView : UIImageView = self.createImgView()
+//                    imgView.frame = CGRect(x: UIConstant.MARGIN_10, y: self.contentY, width: size.width, height: size.height)
+//                    imgView.center.x = UIConstant.SCREEN_WIDTH*0.5
+//                    print("图片地址\(String(describing: contentModel.content))")
+//                    let stringUrl : String = contentModel.content.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+//                    imgView.nice_setImage(imageURL:URL(string: stringUrl))
+//                    self.centerView.addSubview(imgView)
+//                    self.contentY += size.height + UIConstant.MARGIN_10
+//                }
+//            }
+//        }
         
         
         // 分享view
